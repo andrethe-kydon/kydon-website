@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #4B2E83;
+  --primary-dark: #3A2366;
+  --primary-light: #6B4EA3;
+  --accent: #FF6B35;
+  --accent-dark: #E55A28;
+  --accent-light: #FF8C5A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #262626;
+  background: #FAFAFA;
+}
+
+[data-hydration-error] {
+  display: none !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4B2E83 0%, #FF6B35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(75, 46, 131, 0.15);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

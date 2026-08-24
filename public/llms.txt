@@ -1,0 +1,94 @@
+# Kydon Group - The AI-Learning Company
+
+> Kydon Group is an AI-learning company headquartered in Singapore, founded in 2012. We build agentic AI infrastructure that aligns skills to enterprise priorities, delivering personalized learning at scale for workforce transformation.
+
+## Company Overview
+
+- **Name:** Kydon Group Pte Ltd
+- **Founded:** 2012
+- **Headquarters:** Singapore
+- **Industry:** Enterprise AI Learning, Workforce Transformation, Data Intelligence
+- **Website:** https://www.kydongrp.com
+- **Tagline:** The AI-Learning Company
+
+## Key Offerings
+
+### Agent OS Learning Platform
+An AI-powered learning management platform that uses intelligent agents to deliver personalized training experiences. Features adaptive learning paths, smart assessments, and real-time performance analytics.
+- URL: https://www.kydongrp.com/platform
+
+### AI Learning Engine
+The core intelligence layer that powers personalized learning recommendations, skill gap analysis, and adaptive content delivery using agentic AI.
+- URL: https://www.kydongrp.com/ai-learning-engine
+- Status: Beta
+
+### AI University
+Role-based AI training and reskilling programs for enterprise professionals. Provides structured learning tracks, AI credentials, and a skills passport for career development.
+- URL: https://www.kydongrp.com/ai-university
+- Status: Coming Soon
+
+### AI Learning Platform (Learning Intelligence Infrastructure)
+The intelligent backbone for learning operations, providing data-driven insights for training effectiveness and workforce capability mapping.
+- URL: https://www.kydongrp.com/ai-learning-platform
+
+### Kydon Learning Systems (KLSI)
+Full-service learning solutions including consulting, custom LMS development, content development (e-learning, AR, VR, gamification), system integration, and manpower support.
+- URL: https://www.kydongrp.com/businesses/kydon-learning-systems
+
+### ZilLearn
+A subsidiary focused on digital learning solutions and LMS platforms.
+- URL: https://zillearn.com
+
+### ZilLearn Bina Riya
+Malaysia-based operations providing localized learning and workforce development solutions.
+- URL: https://www.kydongrp.com/businesses/zillearn-bina-riya
+
+## Target Regions
+
+- **Primary:** Singapore, Malaysia, Southeast Asia
+- **Secondary:** Australia (Sydney, Melbourne), Asia-Pacific
+
+## Industry Verticals
+
+- **Enterprise:** AI-powered workforce transformation for corporations
+- **Government:** Public sector training and digital capability building
+- **Education:** Institutional learning technology and curriculum development
+- **Partners:** Channel partner enablement and training programs
+
+## Core Capabilities
+
+- Agentic AI for adaptive learning
+- Enterprise LMS platform development
+- AI readiness assessment and consulting
+- Custom e-learning content development (including AR/VR)
+- Workforce skill gap analysis and mapping
+- Learning analytics and intelligence
+- AI governance and training frameworks
+
+## Contact
+
+- **Email:** hello@kydongrp.com
+- **Website:** https://www.kydongrp.com/contact
+- **LinkedIn:** https://www.linkedin.com/company/kydon-group/
+
+## Subsidiaries
+
+- Kydon Learning Systems International (KLSI)
+- ZilLearn Pte Ltd
+- ZilLearn Bina Riya Sdn Bhd (Malaysia)
+
+## Key Pages
+
+- Homepage: https://www.kydongrp.com
+- Platform: https://www.kydongrp.com/platform
+- AI Learning Engine: https://www.kydongrp.com/ai-learning-engine
+- AI University: https://www.kydongrp.com/ai-university
+- AI Learning Platform: https://www.kydongrp.com/ai-learning-platform
+- Company: https://www.kydongrp.com/company
+- Insights & Blog: https://www.kydongrp.com/insights
+- Careers: https://www.kydongrp.com/careers
+- Contact: https://www.kydongrp.com/contact
+- Enterprise Solutions: https://www.kydongrp.com/solutions/enterprise
+- Government Solutions: https://www.kydongrp.com/solutions/government
+- Education Solutions: https://www.kydongrp.com/solutions/education
+- Partner Solutions: https://www.kydongrp.com/solutions/partners
