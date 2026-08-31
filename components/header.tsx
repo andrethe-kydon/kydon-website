@@ -22,6 +22,7 @@ const navItems = [
     dropdown: [
       { label: 'Kydon Learning Systems Institute', href: '/businesses/kydon-learning-systems' },
       { label: 'ZilLearn', href: '/businesses/zillearn' },
+      { label: 'Future Edge Institute', href: 'https://www.futureedgeinstitute.com', external: true },
     ],
   },
   {
@@ -84,15 +85,27 @@ export function Header() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-1 py-2 w-64 bg-white rounded-xl shadow-xl border border-neutral-200"
                     >
-                      {item?.dropdown?.map((sub) => (
-                        <Link
-                          key={sub?.label ?? 'sub-item'}
-                          href={sub?.href ?? '#'}
-                          className="block px-4 py-2 text-sm text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-colors"
-                        >
-                          {sub?.label ?? ''}
-                        </Link>
-                      )) ?? []}
+                      {item?.dropdown?.map((sub) =>
+                        sub?.external ? (
+                          <a
+                            key={sub?.label ?? 'sub-item'}
+                            href={sub?.href ?? '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-sm text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-colors"
+                          >
+                            {sub?.label ?? ''}
+                          </a>
+                        ) : (
+                          <Link
+                            key={sub?.label ?? 'sub-item'}
+                            href={sub?.href ?? '#'}
+                            className="block px-4 py-2 text-sm text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-colors"
+                          >
+                            {sub?.label ?? ''}
+                          </Link>
+                        )
+                      ) ?? []}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -139,16 +152,29 @@ export function Header() {
                   >
                     {item?.label ?? ''}
                   </Link>
-                  {item?.dropdown?.map((sub) => (
-                    <Link
-                      key={sub?.label ?? 'mobile-sub-item'}
-                      href={sub?.href ?? '#'}
-                      className="block px-8 py-2 text-sm text-neutral-500 hover:text-primary"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {sub?.label ?? ''}
-                    </Link>
-                  )) ?? null}
+                  {item?.dropdown?.map((sub) =>
+                    sub?.external ? (
+                      <a
+                        key={sub?.label ?? 'mobile-sub-item'}
+                        href={sub?.href ?? '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-8 py-2 text-sm text-neutral-500 hover:text-primary"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {sub?.label ?? ''}
+                      </a>
+                    ) : (
+                      <Link
+                        key={sub?.label ?? 'mobile-sub-item'}
+                        href={sub?.href ?? '#'}
+                        className="block px-8 py-2 text-sm text-neutral-500 hover:text-primary"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {sub?.label ?? ''}
+                      </Link>
+                    )
+                  ) ?? null}
                 </div>
               )) ?? []}
               <div className="pt-4">
