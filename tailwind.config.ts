@@ -22,6 +22,7 @@ const config: Config = {
           DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
           dark: 'rgb(var(--brand-primary-dark) / <alpha-value>)',
           darker: 'rgb(var(--brand-primary-darker) / <alpha-value>)',
+          darkest: 'rgb(var(--brand-primary-darkest) / <alpha-value>)',
           // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-primary-light) / <alpha-value>)',
           foreground: '#FFFFFF',
@@ -30,6 +31,7 @@ const config: Config = {
           DEFAULT: 'rgb(var(--brand-accent) / <alpha-value>)',
           dark: 'rgb(var(--brand-accent-dark) / <alpha-value>)',
           darker: 'rgb(var(--brand-accent-darker) / <alpha-value>)',
+          darkest: 'rgb(var(--brand-accent-darkest) / <alpha-value>)',
           // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-accent-light) / <alpha-value>)',
           foreground: '#FFFFFF',

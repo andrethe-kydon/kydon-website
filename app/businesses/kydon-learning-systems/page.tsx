@@ -46,25 +46,25 @@ const mainServices = [
     icon: Search, 
     title: 'Consulting', 
     description: 'Identify your business goals, organisational and learning needs, and the success measures to address them.',
-    color: 'bg-primary-dark'
+    color: 'bg-neutral-100'
   },
   { 
     icon: Lightbulb, 
     title: 'Solutions', 
     description: 'Propose learning solutions to meet the unique needs and close the performance gaps of your target learners without deviating from your branding or core message.',
-    color: 'bg-accent-dark'
+    color: 'bg-neutral-100'
   },
   { 
     icon: GraduationCap, 
     title: 'Training', 
     description: 'Foster that learning culture by creating holistic training programs that are accessible and measurable against your desired business outcome.',
-    color: 'bg-primary-darker'
+    color: 'bg-neutral-100'
   },
   { 
     icon: Rocket, 
     title: 'Delivery', 
     description: 'Elevate learning to the next level by delivering it quickly, serving it digitally, making it accessible, and time-efficient for learning.',
-    color: 'bg-primary-dark'
+    color: 'bg-neutral-100'
   },
 ]
 
@@ -85,12 +85,12 @@ const integratedCapabilities = [
       'Change Management',
       'Systems Integration & Project Management'
     ],
-    color: 'from-accent-dark to-accent-darker',
+    color: 'from-primary-darker to-primary-darkest',
   },
   {
     title: 'Learning Technologies',
     items: ['New Tech Learning Environment', 'Interactive Digital Content'],
-    color: 'from-primary-dark to-primary-darker',
+    color: 'from-primary-darkest to-neutral-900',
   },
 ]
 
@@ -126,7 +126,7 @@ const services = [
       'API development and integration',
       'Cloud-native application architecture'
     ],
-    color: 'from-accent-dark to-accent-darker'
+    color: 'from-primary-dark to-primary-darker'
   },
   {
     id: 'system-integration',
@@ -222,7 +222,7 @@ const services = [
       'Change management consulting',
       'Learning strategy development'
     ],
-    color: 'from-accent-dark to-accent-darker'
+    color: 'from-primary-dark to-primary-darker'
   },
   {
     id: 'manpower',
@@ -412,16 +412,19 @@ export default function KydonLearningSystems() {
                 transition={{ delay: i * 0.15 }}
                 className="relative"
               >
-                <div className={`bg-gradient-to-br ${cap.color} rounded-2xl p-6 text-white h-full`}>
-                  <h3 className="text-lg font-bold mb-4">{cap.title}</h3>
-                  <ul className="space-y-2">
-                    {cap.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-white/90">
-                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className={`bg-gradient-to-br ${cap.color} rounded-2xl overflow-hidden text-white h-full`}>
+                  <div className="h-2 bg-primary" />
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold mb-4">{cap.title}</h3>
+                    <ul className="space-y-2">
+                      {cap.items.map((item, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-white">
+                          <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -469,7 +472,7 @@ export default function KydonLearningSystems() {
                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all text-center"
               >
                 <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                  <service.icon className="w-8 h-8 text-white" />
+                  <service.icon className="w-8 h-8 text-primary-dark" />
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-3">{service.title}</h3>
                 <p className="text-neutral-600 text-sm leading-relaxed">{service.description}</p>
@@ -568,7 +571,7 @@ export default function KydonLearningSystems() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent-dark text-white font-semibold rounded-xl hover:bg-accent-darker transition-all shadow-lg"
             >
               Contact Us Today
               <ArrowRight className="w-5 h-5" />
