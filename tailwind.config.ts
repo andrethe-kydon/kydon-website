@@ -56,7 +56,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        // `font-display` is for non-heading elements at heading scale.
+        display: ['var(--font-league-spartan)', 'var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         'container': '1200px',

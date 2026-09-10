@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat, League_Spartan } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
@@ -7,7 +7,23 @@ import GoogleAnalytics from '@/components/google-analytics'
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from '@/components/seo/json-ld'
 import TrackingScripts, { TrackingNoscript, FBPixelNoscript } from '@/components/tracking-scripts'
 
-const inter = Inter({ subsets: ['latin'] })
+// Body face. Weights limited to those the codebase actually uses:
+// 400 default/font-normal, 500 font-medium, 600 font-semibold, 700 font-bold.
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-montserrat',
+  display: 'swap',
+})
+
+// Display face for h1-h4 and the .font-display escape hatch. Headings only
+// ever use font-semibold (600) and font-bold (700).
+const leagueSpartan = League_Spartan({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-league-spartan',
+  display: 'swap',
+})
 
 export const dynamic = 'force-dynamic'
 
@@ -108,7 +124,7 @@ export default function RootLayout({
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js"></script>
         <TrackingScripts />
       </head>
-      <body className={inter.className}>
+      <body className={`${montserrat.variable} ${leagueSpartan.variable}`}>
         <TrackingNoscript />
         <FBPixelNoscript />
         <OrganizationSchema />

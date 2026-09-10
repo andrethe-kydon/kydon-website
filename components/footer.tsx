@@ -99,17 +99,17 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-neutral-500 text-sm">
+          <p className="text-neutral-400 text-xs sm:text-sm">
             © 2026 Kydon Holdings Pte Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link 
               href="/privacy-policy" 
-              className="text-neutral-500 hover:text-accent transition-colors text-sm"
+              className="text-neutral-400 hover:text-accent transition-colors text-xs sm:text-sm"
             >
               Privacy Policy
             </Link>
-            <span className="text-neutral-500 text-sm">Singapore • Global</span>
+            <span className="text-neutral-400 text-xs sm:text-sm">Singapore • Global</span>
           </div>
         </div>
       </div>

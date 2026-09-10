@@ -58,7 +58,7 @@ export default function GovernmentVerticalPage() {
             <span className="inline-block px-4 py-1.5 bg-primary/90 text-white font-medium text-sm rounded-full mb-4">
               Government Solutions
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-balance">
               Empowering public sector{' '}
               <span className="text-primary">workforce transformation</span>
             </h1>

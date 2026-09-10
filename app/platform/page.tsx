@@ -567,7 +567,7 @@ export default function PlatformPage() {
               { value: '98%', label: 'Satisfaction Rate' }
             ].map((stat, i) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="font-display text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
                 <div className="text-neutral-600">{stat.label}</div>
               </div>
             ))}

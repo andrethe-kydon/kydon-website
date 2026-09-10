@@ -60,7 +60,7 @@ export default function AILearningPlatformPage() {
                 Beta
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-balance">
               Transform learning with{' '}
               <span className="text-white/90 underline decoration-white/30 underline-offset-4">intelligent automation</span>
             </h1>
@@ -210,7 +210,7 @@ export default function AILearningPlatformPage() {
                       <Users className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <p className="text-3xl font-bold text-neutral-900">40%</p>
+                      <p className="font-display text-3xl font-bold text-neutral-900">40%</p>
                       <p className="text-neutral-600">Faster skill acquisition</p>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ export default function AILearningPlatformPage() {
                       <Zap className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <p className="text-3xl font-bold text-neutral-900">85%</p>
+                      <p className="font-display text-3xl font-bold text-neutral-900">85%</p>
                       <p className="text-neutral-600">Completion rate improvement</p>
                     </div>
                   </div>
@@ -228,7 +228,7 @@ export default function AILearningPlatformPage() {
                       <BarChart3 className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <p className="text-3xl font-bold text-neutral-900">3x</p>
+                      <p className="font-display text-3xl font-bold text-neutral-900">3x</p>
                       <p className="text-neutral-600">ROI on training investment</p>
                     </div>
                   </div>

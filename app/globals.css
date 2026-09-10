@@ -53,9 +53,24 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   color: #262728;
   background: #FAFAFA;
+}
+
+/*
+ * League Spartan on every semantic heading. Kept in @layer base so a utility
+ * class on an individual heading still wins. Elements that look like headings
+ * but are not h1-h4 (stat numerals, mostly) use .font-display instead.
+ */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-league-spartan), var(--font-montserrat), system-ui,
+      sans-serif;
+  }
 }
 
 [data-hydration-error] {

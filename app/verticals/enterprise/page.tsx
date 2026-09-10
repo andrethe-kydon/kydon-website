@@ -95,7 +95,7 @@ export default function EnterpriseVerticalPage() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <p className="text-4xl font-bold text-primary">{stat?.value ?? ''}</p>
+                <p className="font-display text-4xl font-bold text-primary">{stat?.value ?? ''}</p>
                 <p className="text-neutral-600">{stat?.label ?? ''}</p>
               </motion.div>
             )) ?? []}

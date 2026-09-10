@@ -44,7 +44,7 @@ export function TractionSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 {stat?.icon && <stat.icon className="w-6 h-6 text-primary" />}
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-neutral-900 mb-1">
+              <div className="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-1">
                 <AnimatedCounter
                   end={stat?.value ?? 0}
                   suffix={stat?.suffix ?? ''}

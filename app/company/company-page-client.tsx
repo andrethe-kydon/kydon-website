@@ -57,7 +57,7 @@ function LeaderCard({ leader, index }: { leader: Leader; index: number }) {
           </div>
         ) : (
           <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-            <span className="text-3xl font-bold text-primary">
+            <span className="font-display text-3xl font-bold text-primary">
               {leader?.name?.charAt?.(0) ?? ''}
             </span>
           </div>

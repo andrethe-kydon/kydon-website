@@ -71,7 +71,7 @@ export function GrowthMetricsSection() {
               <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mx-auto mb-4">
                 <metric.icon className="w-6 h-6 text-white" />
               </div>
-              <div className="text-4xl font-bold text-neutral-900 mb-1">
+              <div className="font-display text-4xl font-bold text-neutral-900 mb-1">
                 {metric.value}
               </div>
               <div className="font-semibold text-neutral-700 mb-1">
@@ -106,7 +106,7 @@ export function GrowthMetricsSection() {
             </div>
             <div className="text-center md:text-right">
               <div className="inline-flex flex-col items-center md:items-end gap-2">
-                <span className="text-5xl md:text-6xl font-bold text-white">
+                <span className="font-display text-5xl md:text-6xl font-bold text-white">
                   $30M+
                 </span>
                 <span className="text-neutral-400">

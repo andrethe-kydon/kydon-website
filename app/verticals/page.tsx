@@ -87,7 +87,7 @@ export default function VerticalsPage() {
                   {stat?.icon && <stat.icon className="w-7 h-7 text-primary" />}
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-neutral-900">{stat?.value ?? ''}</p>
+                  <p className="font-display text-3xl font-bold text-neutral-900">{stat?.value ?? ''}</p>
                   <p className="text-neutral-600">{stat?.label ?? ''}</p>
                 </div>
               </motion.div>
