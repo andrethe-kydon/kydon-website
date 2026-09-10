@@ -17,7 +17,7 @@ export default function ZillearnBinaRiyaPage() {
       <section className="py-20 bg-gradient-to-br from-neutral-50 via-white to-primary/5">
         <div className="max-w-container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
               Kydon Business
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
@@ -49,7 +49,7 @@ export default function ZillearnBinaRiyaPage() {
             {focuses?.map((focus, i) => (
               <motion.div key={focus?.title ?? `focus-${i}`} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-neutral-50 rounded-2xl p-6 card-hover">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  {focus?.icon && <focus.icon className="w-6 h-6 text-primary" />}
+                  {focus?.icon && <focus.icon className="w-6 h-6 text-primary-dark" />}
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-2">{focus?.title ?? ''}</h3>
                 <p className="text-neutral-600 text-sm">{focus?.description ?? ''}</p>
@@ -59,11 +59,11 @@ export default function ZillearnBinaRiyaPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-darker text-white">
         <div className="max-w-container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Partner with us in Indonesia</h2>
-          <p className="text-white/70 max-w-xl mx-auto mb-8">Bring world-class AI learning solutions to your Indonesian organization</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
+          <p className="text-white max-w-xl mx-auto mb-8">Bring world-class AI learning solutions to your Indonesian organization</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
             Get in Touch <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

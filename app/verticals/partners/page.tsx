@@ -131,7 +131,7 @@ export default function PartnersVerticalPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+              <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
                 API Licensing
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -211,7 +211,7 @@ console.log(response.pathway);`}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Handshake className="w-5 h-5 text-primary" />
+                    <Handshake className="w-5 h-5 text-primary-dark" />
                   </div>
                   <h3 className="font-bold text-neutral-900">{alliance?.name ?? ''}</h3>
                 </div>
@@ -239,7 +239,7 @@ console.log(response.pathway);`}
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />

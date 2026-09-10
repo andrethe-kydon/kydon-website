@@ -84,7 +84,7 @@ export default function VerticalsPage() {
                 className="flex items-center gap-4"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
-                  {stat?.icon && <stat.icon className="w-7 h-7 text-primary" />}
+                  {stat?.icon && <stat.icon className="w-7 h-7 text-primary-dark" />}
                 </div>
                 <div>
                   <p className="font-display text-3xl font-bold text-neutral-900">{stat?.value ?? ''}</p>
@@ -145,12 +145,12 @@ export default function VerticalsPage() {
                         key={j}
                         className="inline-flex items-center gap-1 px-3 py-1 bg-neutral-100 text-neutral-700 text-sm rounded-full"
                       >
-                        <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                        <CheckCircle className="w-3.5 h-3.5 text-primary-dark" />
                         {feature ?? ''}
                       </span>
                     )) ?? []}
                   </div>
-                  <div className="flex items-center gap-2 mt-6 text-primary font-medium">
+                  <div className="flex items-center gap-2 mt-6 text-primary-dark font-medium">
                     Learn more
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

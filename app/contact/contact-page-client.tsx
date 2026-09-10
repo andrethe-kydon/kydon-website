@@ -191,7 +191,7 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-neutral-900 mb-2">Headquarters</h2>
-            <p className="text-xl text-primary font-semibold">Singapore</p>
+            <p className="text-xl text-primary-dark font-semibold">Singapore</p>
           </motion.div>
 
           <motion.div
@@ -202,13 +202,13 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
           >
             <div className="flex items-center justify-center gap-3">
               <Phone className="w-5 h-5 text-primary" />
-              <a href="tel:+6566815691" className="text-neutral-700 hover:text-primary transition-colors">
+              <a href="tel:+6566815691" className="text-neutral-700 hover:text-primary-dark transition-colors">
                 +65 6681 5691
               </a>
             </div>
             <div className="flex items-center justify-center gap-3">
               <Mail className="w-5 h-5 text-primary" />
-              <a href="mailto:contact@kydongrp.com" className="text-neutral-700 hover:text-primary transition-colors">
+              <a href="mailto:contact@kydongrp.com" className="text-neutral-700 hover:text-primary-dark transition-colors">
                 contact@kydongrp.com
               </a>
             </div>
@@ -247,7 +247,7 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
                 <h3 className="text-xl font-bold text-primary">{office.country}</h3>
                 <div className="flex items-start gap-3">
                   <Mail className="w-4 h-4 text-neutral-400 mt-1 flex-shrink-0" />
-                  <a href={`mailto:${office.email}`} className="text-neutral-600 hover:text-primary transition-colors text-sm">
+                  <a href={`mailto:${office.email}`} className="text-neutral-600 hover:text-primary-dark transition-colors text-sm">
                     {office.email}
                   </a>
                 </div>
@@ -262,7 +262,7 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary to-primary-dark">
+      <section className="py-16 bg-gradient-to-br from-primary to-primary-darker">
         <div className="max-w-container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -271,12 +271,12 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
           >
             <Building2 className="w-12 h-12 text-white/80 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Learning?</h2>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-white mb-8 max-w-2xl mx-auto">
               Our team is ready to help you explore AI-powered learning solutions tailored to your organization&apos;s needs.
             </p>
             <a 
               href="mailto:contact@kydongrp.com"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
             >
               <Mail className="w-5 h-5" />
               Get in Touch

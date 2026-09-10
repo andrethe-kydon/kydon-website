@@ -58,7 +58,7 @@ export function ProblemSection() {
               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all card-hover"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                {problem?.icon && <problem.icon className="w-6 h-6 text-primary" />}
+                {problem?.icon && <problem.icon className="w-6 h-6 text-primary-dark" />}
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 {problem?.title ?? ''}

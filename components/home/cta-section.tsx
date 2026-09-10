@@ -22,13 +22,13 @@ export function CTASection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Build an AI-ready workforce
             </h2>
-            <p className="text-white/70 max-w-xl mx-auto mb-8 text-lg">
+            <p className="text-white max-w-xl mx-auto mb-8 text-lg">
               Transform how your organization learns, adapts, and thrives in the AI era
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />

@@ -107,7 +107,7 @@ export function PillarsSection({ pillars }: PillarsSectionProps) {
                 className="group relative bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all card-hover border border-neutral-100"
               >
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary font-medium text-xs rounded-full">
+                  <span className="inline-block px-3 py-1 bg-neutral-100 text-primary-darker font-medium text-xs rounded-full">
                     {pillar?.label || `Layer ${i + 1}`}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export function PillarsSection({ pillars }: PillarsSectionProps) {
                 </ul>
                 <Link
                   href={pillar?.link ?? '#'}
-                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-primary-dark font-semibold text-sm group-hover:gap-3 transition-all"
                 >
                   Explore {pillar?.title ?? ''}
                   <ArrowRight className="w-4 h-4" />

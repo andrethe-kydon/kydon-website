@@ -51,7 +51,7 @@ export function Footer() {
                 <li key={link?.label ?? 'footer-product'}>
                   <Link
                     href={link?.href ?? '#'}
-                    className="text-neutral-400 hover:text-accent transition-colors text-sm flex items-center gap-2"
+                    className="text-neutral-400 hover:text-accent-light transition-colors text-sm flex items-center gap-2"
                   >
                     {link?.icon && <link.icon className="w-4 h-4" />}
                     {link?.label ?? ''}
@@ -69,7 +69,7 @@ export function Footer() {
                 <li key={link?.label ?? 'footer-solutions'}>
                   <Link
                     href={link?.href ?? '#'}
-                    className="text-neutral-400 hover:text-accent transition-colors text-sm flex items-center gap-2"
+                    className="text-neutral-400 hover:text-accent-light transition-colors text-sm flex items-center gap-2"
                   >
                     {link?.icon && <link.icon className="w-4 h-4" />}
                     {link?.label ?? ''}
@@ -87,7 +87,7 @@ export function Footer() {
                 <li key={link?.label ?? 'footer-company'}>
                   <Link
                     href={link?.href ?? '#'}
-                    className="text-neutral-400 hover:text-accent transition-colors text-sm"
+                    className="text-neutral-400 hover:text-accent-light transition-colors text-sm"
                   >
                     {link?.label ?? ''}
                   </Link>
@@ -105,7 +105,7 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <Link 
               href="/privacy-policy" 
-              className="text-neutral-400 hover:text-accent transition-colors text-xs sm:text-sm"
+              className="text-neutral-400 hover:text-accent-light transition-colors text-xs sm:text-sm"
             >
               Privacy Policy
             </Link>

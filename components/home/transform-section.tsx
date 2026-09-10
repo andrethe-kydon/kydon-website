@@ -44,7 +44,7 @@ export function TransformSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
             Transform Your Organization
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">

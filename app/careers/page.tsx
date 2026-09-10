@@ -133,7 +133,7 @@ export default async function CareersPage() {
               Build the Future of{' '}
               <span className="text-white/90">AI-Powered Learning</span>
             </h1>
-            <p className="text-xl text-white/70 leading-relaxed">
+            <p className="text-xl text-white leading-relaxed">
               We&apos;re on a mission to transform how the world learns. Join a team of innovators, 
               educators, and technologists working to make learning more intelligent and accessible.
             </p>
@@ -150,7 +150,7 @@ export default async function CareersPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-7 h-7 text-primary" />
+                <Sparkles className="w-7 h-7 text-primary-dark" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Meaningful Impact</h3>
               <p className="text-neutral-600">
@@ -159,7 +159,7 @@ export default async function CareersPage() {
             </div>
             <div className="text-center">
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-7 h-7 text-primary" />
+                <Users className="w-7 h-7 text-primary-dark" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Collaborative Culture</h3>
               <p className="text-neutral-600">
@@ -168,7 +168,7 @@ export default async function CareersPage() {
             </div>
             <div className="text-center">
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Building2 className="w-7 h-7 text-primary" />
+                <Building2 className="w-7 h-7 text-primary-dark" />
               </div>
               <h3 className="text-lg font-bold text-neutral-900 mb-2">Growth Opportunities</h3>
               <p className="text-neutral-600">

@@ -107,7 +107,7 @@ export default function InsightsClientWrapper({ insights }: InsightsClientWrappe
                     <div className="p-6">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                          <IconComponent className="w-6 h-6 text-primary" />
+                          <IconComponent className="w-6 h-6 text-primary-dark" />
                         </div>
                         <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full">
                           {insight?.category ?? 'Article'}
@@ -149,7 +149,7 @@ export default function InsightsClientWrapper({ insights }: InsightsClientWrappe
                         ) : (
                           <Link
                             href={`/insights/${slug}`}
-                            className="inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all"
+                            className="inline-flex items-center gap-1 text-primary-dark font-semibold text-sm group-hover:gap-2 transition-all"
                           >
                             Read more
                             <ArrowRight className="w-4 h-4" />
@@ -178,15 +178,15 @@ export default function InsightsClientWrapper({ insights }: InsightsClientWrappe
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-10 md:p-16 text-center text-white"
+            className="bg-gradient-to-br from-primary to-primary-darker rounded-3xl p-10 md:p-16 text-center text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay ahead of the curve</h2>
-            <p className="text-white/70 max-w-xl mx-auto mb-8">
+            <p className="text-white max-w-xl mx-auto mb-8">
               Get the latest insights on AI-powered learning delivered to your inbox
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all"
             >
               Subscribe to Updates
               <ArrowRight className="w-5 h-5" />

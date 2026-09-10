@@ -30,7 +30,7 @@ export function PartnersSection() {
         >
           <div className="flex items-center justify-center gap-2 mb-3">
             <Handshake className="w-5 h-5 text-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+            <span className="text-sm font-semibold text-primary-dark uppercase tracking-wider">
               Strategic Alliances & Accreditations
             </span>
           </div>

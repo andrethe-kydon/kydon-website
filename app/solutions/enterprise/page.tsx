@@ -18,7 +18,7 @@ export default function EnterprisePage() {
         <div className="max-w-container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-              <Building2 className="w-7 h-7 text-primary" />
+              <Building2 className="w-7 h-7 text-primary-dark" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
               Enterprise <span className="gradient-text">Solutions</span>
@@ -39,7 +39,7 @@ export default function EnterprisePage() {
             {benefits?.map((benefit, i) => (
               <motion.div key={benefit?.title ?? `benefit-${i}`} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-neutral-50 rounded-2xl p-6 card-hover">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  {benefit?.icon && <benefit.icon className="w-6 h-6 text-primary" />}
+                  {benefit?.icon && <benefit.icon className="w-6 h-6 text-primary-dark" />}
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-2">{benefit?.title ?? ''}</h3>
                 <p className="text-neutral-600 text-sm">{benefit?.description ?? ''}</p>
@@ -49,11 +49,11 @@ export default function EnterprisePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-darker text-white">
         <div className="max-w-container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to transform your enterprise?</h2>
-          <p className="text-white/70 max-w-xl mx-auto mb-8">Join 100+ enterprises using Kydon to build AI-ready workforces</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
+          <p className="text-white max-w-xl mx-auto mb-8">Join 100+ enterprises using Kydon to build AI-ready workforces</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
             Get Started <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

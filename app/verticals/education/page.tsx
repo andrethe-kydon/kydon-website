@@ -66,7 +66,7 @@ export default function EducationVerticalPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />
@@ -131,7 +131,7 @@ export default function EducationVerticalPage() {
                 className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  {feature?.icon && <feature.icon className="w-7 h-7 text-primary" />}
+                  {feature?.icon && <feature.icon className="w-7 h-7 text-primary-dark" />}
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-2">{feature?.title ?? ''}</h3>
                 <p className="text-neutral-600 text-sm leading-relaxed">{feature?.description ?? ''}</p>

@@ -149,7 +149,7 @@ export default async function JobDetailPage({ params }: { params: { id: string }
         {/* Back Link */}
         <Link
           href="/careers"
-          className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary-dark transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to All Positions
@@ -158,7 +158,7 @@ export default async function JobDetailPage({ params }: { params: { id: string }
         {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+            <span className="px-3 py-1 bg-neutral-100 text-primary-darker text-sm font-medium rounded-full">
               {departmentLabels[position.department] || position.department}
             </span>
             <span className="px-3 py-1 bg-neutral-100 text-neutral-600 text-sm font-medium rounded-full">

@@ -83,7 +83,7 @@ export function HeroSection({ content }: HeroSectionProps) {
               </Link>
               <Link
                 href={data.secondaryButtonLink}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary-darker font-semibold rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all"
               >
                 {data.secondaryButtonText}
               </Link>
@@ -91,7 +91,7 @@ export function HeroSection({ content }: HeroSectionProps) {
 
             {/* Micro-proof chips */}
             <div>
-              <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Enabling AI Learning For</p>
+              <p className="text-sm font-semibold text-primary-dark uppercase tracking-wide mb-3">Enabling AI Learning For</p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-neutral-100">
                   <Users className="w-4 h-4 text-primary" />

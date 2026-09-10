@@ -163,7 +163,7 @@ export default function PlatformPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-medium text-sm rounded-full mb-4 border border-primary/30">
+            <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4 border border-primary/30">
               Learning Success Platform
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -197,7 +197,7 @@ export default function PlatformPage() {
       </section>
 
       {/* AI Core Statement */}
-      <section className="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
+      <section className="py-16 bg-gradient-to-r from-primary to-primary-darker text-white">
         <div className="max-w-container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -209,7 +209,7 @@ export default function PlatformPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               AI Is Not An Add-On. It's The Core Of Our Product.
             </h2>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg">
+            <p className="text-white max-w-2xl mx-auto text-lg">
               Elevate the team's role from simply providing content to actively driving strategic business outcomes.
             </p>
           </motion.div>
@@ -225,7 +225,7 @@ export default function PlatformPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
               See It In Action
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -387,7 +387,7 @@ export default function PlatformPage() {
                   </ul>
                   <Link
                     href={path.href}
-                    className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-primary-dark font-semibold group-hover:gap-3 transition-all"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4" />
@@ -408,7 +408,7 @@ export default function PlatformPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
               Powerful Features
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -456,7 +456,7 @@ export default function PlatformPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary-dark font-medium text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
               The AI Advantage
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -485,9 +485,9 @@ export default function PlatformPage() {
                 Category
               </div>
               <div className="p-4 md:p-6 flex items-center justify-end gap-3">
-                <span className="font-semibold text-primary hidden md:inline">AI-Powered Platform</span>
+                <span className="font-semibold text-primary-dark hidden md:inline">AI-Powered Platform</span>
                 <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-primary" />
+                  <Sparkles className="w-5 h-5 text-primary-dark" />
                 </div>
               </div>
             </div>

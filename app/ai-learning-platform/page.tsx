@@ -64,13 +64,13 @@ export default function AILearningPlatformPage() {
               Transform learning with{' '}
               <span className="text-white/90 underline decoration-white/30 underline-offset-4">intelligent automation</span>
             </h1>
-            <p className="text-xl text-white/70 mb-8 leading-relaxed">
+            <p className="text-xl text-white mb-8 leading-relaxed">
               Our AI-powered learning platform delivers personalized, adaptive learning experiences that evolve with your workforce. Harness the power of machine learning to create truly intelligent education.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5" />
@@ -180,7 +180,7 @@ export default function AILearningPlatformPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+              <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
                 Benefits
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -256,7 +256,7 @@ export default function AILearningPlatformPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />

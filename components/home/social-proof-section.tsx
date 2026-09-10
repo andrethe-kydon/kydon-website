@@ -117,7 +117,7 @@ export function SocialProofSection({ clients }: SocialProofSectionProps) {
                     />
                   </div>
                 ) : (
-                  <span className="text-neutral-400 font-medium text-sm md:text-base hover:text-primary transition-colors cursor-default whitespace-nowrap">
+                  <span className="text-neutral-400 font-medium text-sm md:text-base hover:text-primary-dark transition-colors cursor-default whitespace-nowrap">
                     {client?.name ?? ''}
                   </span>
                 )}

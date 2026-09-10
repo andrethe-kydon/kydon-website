@@ -64,7 +64,7 @@ function LeaderCard({ leader, index }: { leader: Leader; index: number }) {
         )}
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-bold text-neutral-900 leading-tight">{leader?.name ?? ''}</h3>
-          <p className="text-primary font-medium text-sm mt-1">{leader?.role ?? ''}</p>
+          <p className="text-primary-dark font-medium text-sm mt-1">{leader?.role ?? ''}</p>
         </div>
       </div>
 
@@ -101,7 +101,7 @@ function LeaderCard({ leader, index }: { leader: Leader; index: number }) {
       {shouldTruncate && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="mt-4 inline-flex items-center gap-1.5 text-primary font-medium text-sm hover:text-primary-dark transition-colors self-start group"
+          className="mt-4 inline-flex items-center gap-1.5 text-primary-dark font-medium text-sm hover:text-primary-dark transition-colors self-start group"
         >
           {isExpanded ? (
             <>
@@ -151,7 +151,7 @@ export default function CompanyPageClient({ companyContent, leaders }: CompanyPa
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+              <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
                 Our Culture
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
@@ -249,15 +249,15 @@ export default function CompanyPageClient({ companyContent, leaders }: CompanyPa
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-10 md:p-16 text-center text-white"
+            className="bg-gradient-to-br from-primary to-primary-darker rounded-3xl p-10 md:p-16 text-center text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Join us in transforming learning</h2>
-            <p className="text-white/70 max-w-xl mx-auto mb-8">
+            <p className="text-white max-w-xl mx-auto mb-8">
               Partner with Kydon to build the AI-ready workforce of the future
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all"
             >
               Get in Touch
               <ArrowRight className="w-5 h-5" />

@@ -66,7 +66,7 @@ export default function EnterpriseVerticalPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-darker font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />
@@ -131,7 +131,7 @@ export default function EnterpriseVerticalPage() {
                 className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  {benefit?.icon && <benefit.icon className="w-7 h-7 text-primary" />}
+                  {benefit?.icon && <benefit.icon className="w-7 h-7 text-primary-dark" />}
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-2">{benefit?.title ?? ''}</h3>
                 <p className="text-neutral-600 leading-relaxed">{benefit?.description ?? ''}</p>
@@ -150,7 +150,7 @@ export default function EnterpriseVerticalPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-medium text-sm rounded-full mb-4">
+              <span className="inline-block px-4 py-1.5 bg-neutral-100 text-primary-darker font-medium text-sm rounded-full mb-4">
                 Comprehensive Solutions
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">

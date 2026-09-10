@@ -18,7 +18,7 @@ export default function GovernmentPage() {
         <div className="max-w-container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-              <Landmark className="w-7 h-7 text-primary" />
+              <Landmark className="w-7 h-7 text-primary-dark" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
               Government <span className="gradient-text">Solutions</span>
@@ -39,7 +39,7 @@ export default function GovernmentPage() {
             {features?.map((feature, i) => (
               <motion.div key={feature?.title ?? `feature-${i}`} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-neutral-50 rounded-2xl p-6 card-hover">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  {feature?.icon && <feature.icon className="w-6 h-6 text-primary" />}
+                  {feature?.icon && <feature.icon className="w-6 h-6 text-primary-dark" />}
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-2">{feature?.title ?? ''}</h3>
                 <p className="text-neutral-600 text-sm">{feature?.description ?? ''}</p>

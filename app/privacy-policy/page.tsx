@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary-dark transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-neutral-600">1 Fusionopolis Place, #03-20 Galaxis</p>
               <p className="text-neutral-600">Singapore 138522</p>
               <p className="text-neutral-600 mt-2">
-                Email: <a href="mailto:info@kydongrp.com" className="text-primary hover:underline">info@kydongrp.com</a>
+                Email: <a href="mailto:info@kydongrp.com" className="text-primary-dark hover:underline">info@kydongrp.com</a>
               </p>
             </div>
           </section>

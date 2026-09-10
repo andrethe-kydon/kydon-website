@@ -138,7 +138,7 @@ const components = {
   },
   marks: {
     link: ({ value, children }: { value?: { href: string }; children?: React.ReactNode }) => (
-      <a href={value?.href} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+      <a href={value?.href} className="text-primary-dark hover:underline" target="_blank" rel="noopener noreferrer">
         {children}
       </a>
     ),
@@ -189,7 +189,7 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/insights"
-            className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary-dark mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Insights
