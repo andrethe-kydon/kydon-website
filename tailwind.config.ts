@@ -22,6 +22,8 @@ const config: Config = {
           DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
           dark: 'rgb(var(--brand-primary-dark) / <alpha-value>)',
           darker: 'rgb(var(--brand-primary-darker) / <alpha-value>)',
+          // KLSI-side only. Under the group palette this resolves to #8C2E00,
+          // which reads brown rather than brand orange -- don't reach for it there.
           darkest: 'rgb(var(--brand-primary-darkest) / <alpha-value>)',
           // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-primary-light) / <alpha-value>)',
@@ -31,6 +33,8 @@ const config: Config = {
           DEFAULT: 'rgb(var(--brand-accent) / <alpha-value>)',
           dark: 'rgb(var(--brand-accent-dark) / <alpha-value>)',
           darker: 'rgb(var(--brand-accent-darker) / <alpha-value>)',
+          // Mirror of primary.darkest: the blue deep stop on group pages,
+          // #8C2E00 brown inside a KLSI wrapper. Scope-sensitive, use with care.
           darkest: 'rgb(var(--brand-accent-darkest) / <alpha-value>)',
           // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-accent-light) / <alpha-value>)',

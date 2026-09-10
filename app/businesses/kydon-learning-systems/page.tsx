@@ -72,7 +72,7 @@ const integratedCapabilities = [
   {
     title: 'Research & Development',
     items: ['Research, Assessment and Planning', 'Evaluation and Measurement'],
-    color: 'from-primary-dark to-primary-darker',
+    color: 'from-primary-darker to-primary-darkest',
   },
   {
     title: 'Learning Design & Consultancy',
@@ -90,7 +90,7 @@ const integratedCapabilities = [
   {
     title: 'Learning Technologies',
     items: ['New Tech Learning Environment', 'Interactive Digital Content'],
-    color: 'from-primary-darkest to-neutral-900',
+    color: 'from-primary-darker to-primary-darkest',
   },
 ]
 
@@ -571,7 +571,7 @@ export default function KydonLearningSystems() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent-dark text-white font-semibold rounded-xl hover:bg-accent-darker transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent-dark text-white font-semibold rounded-xl ring-2 ring-white hover:bg-accent-darker transition-all shadow-lg"
             >
               Contact Us Today
               <ArrowRight className="w-5 h-5" />

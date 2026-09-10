@@ -12,7 +12,9 @@
  *
  * -dark is the accessible variant that clears 4.5:1 on white and is what CTA
  * fills and small links use. -darker is the hover step below it, and -darkest
- * one deeper again, for the dark end of tonal card gradients. -light is a
+ * one deeper again, for the dark end of tonal card gradients -- -darkest was
+ * derived for the KLSI blues, and its orange counterpart (#8C2E00) reads brown,
+ * so nothing on a group page should reach for it. -light is a
  * derived tint for washes and blur fills only -- 2.1-2.4:1, never text.
  */
 :root {
