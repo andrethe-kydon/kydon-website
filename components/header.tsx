@@ -12,7 +12,7 @@ const navItems = [
     href: '#',
     dropdown: [
       { label: 'Agent OS Learning Platform', href: '/platform' },
-      { label: 'AI University', href: '/ai-university' },
+      { label: 'AI Workforce Factory', href: '/ai-workforce-factory' },
       { label: 'Learning Intelligence Infrastructure', href: '/ai-learning-platform' },
     ],
   },

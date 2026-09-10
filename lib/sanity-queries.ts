@@ -7,7 +7,7 @@ import type {
   InsightPost,
   SiteSettings,
   PlatformPageContent,
-  AIUniversityPageContent,
+  AIWorkforceFactoryPageContent,
   AILearningEnginePageContent,
   CompanyPageContent,
   ContactPageContent,
@@ -28,7 +28,7 @@ export async function getHeroContent(): Promise<HeroContent | null> {
   }
 }
 
-// Fetch pillars (AI Platform, AI University, AI Learning Engine)
+// Fetch pillars (AI Platform, AI Workforce Factory, AI Learning Engine)
 export async function getPillars(): Promise<PillarContent[]> {
   if (!isSanityConfigured()) return []
   
@@ -141,17 +141,97 @@ export async function getPlatformPageContent(): Promise<PlatformPageContent | nu
   }
 }
 
-export async function getAIUniversityPageContent(): Promise<AIUniversityPageContent | null> {
+/*
+ * A bare `*[_type == "..."][0]` returns image fields as unresolved asset
+ * references, which urlFor() cannot size and which carry no alt text, so this
+ * query projects explicitly.
+ *
+ * Two of the arrays are filtered on `approved == true`. That is a publication
+ * gate, not a display preference: partner logos need written brand permission
+ * (showing one implies endorsement) and an attributed quote needs the person's
+ * sign-off. Filtering here means an editor can draft either in the Studio
+ * without it appearing live. Do not remove these filters.
+ */
+const AI_WORKFORCE_FACTORY_QUERY = `*[_type == "aiWorkforceFactoryPage"][0]{
+  _id,
+  _type,
+  heroEyebrow,
+  heroHeadline,
+  heroDescription,
+  heroPrimaryButtonText,
+  heroPrimaryButtonLink,
+  heroSecondaryButtonText,
+  heroSecondaryButtonLink,
+  heroIllustration{
+    alt,
+    asset->{_id, url, metadata{dimensions}}
+  },
+  stats[]{value, description, source},
+  whyEyebrow,
+  whyHeading,
+  whyIntro,
+  whyCards[]{title, description, icon},
+  whyClosingLine,
+  pipelineEyebrow,
+  pipelineHeading,
+  pipelineSteps[]{
+    number,
+    title,
+    description,
+    illustration{
+      alt,
+      asset->{_id, url, metadata{dimensions}}
+    }
+  },
+  visionEyebrow,
+  visionQuote,
+  visionAttribution,
+  visionApproved,
+  ecosystemEyebrow,
+  ecosystemHeading,
+  ecosystemBody,
+  "ecosystemPartners": ecosystemPartners[approved == true]{
+    name,
+    url,
+    approved,
+    logo{
+      alt,
+      asset->{_id, url, metadata{dimensions}}
+    }
+  },
+  voicesEyebrow,
+  voicesHeading,
+  "voicesQuotes": voicesQuotes[approved == true]{
+    quote,
+    name,
+    role,
+    approved,
+    photo{
+      alt,
+      asset->{_id, url, metadata{dimensions}}
+    }
+  },
+  audiencesEyebrow,
+  audiencesHeading,
+  audienceCards[]{title, description, icon, linkLabel, linkUrl},
+  ctaHeading,
+  ctaPrimaryButtonText,
+  ctaPrimaryButtonLink,
+  ctaSecondaryButtonText,
+  ctaSecondaryButtonLink
+}`
+
+export async function getAIWorkforceFactoryPageContent(): Promise<AIWorkforceFactoryPageContent | null> {
   if (!isSanityConfigured()) return null
-  
+
   try {
-    const query = `*[_type == "aiUniversityPage"][0]`
-    return await sanityClient.fetch(query)
+    return await sanityClient.fetch(AI_WORKFORCE_FACTORY_QUERY)
   } catch (error) {
-    console.error('Error fetching AI university page:', error)
+    console.error('Error fetching AI workforce factory page:', error)
     return null
   }
 }
+
 
 export async function getAILearningEnginePageContent(): Promise<AILearningEnginePageContent | null> {
   if (!isSanityConfigured()) return null

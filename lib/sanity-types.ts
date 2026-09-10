@@ -103,24 +103,136 @@ export interface PlatformPageContent {
   ctaSectionDescription: string
 }
 
-export interface AIUniversityPageContent {
+/*
+ * Image shape produced by the projections in sanity-queries.ts. The asset
+ * reference is dereferenced so `urlFor()` can build a CDN URL and so the
+ * intrinsic dimensions are available -- next.config.js sets
+ * `images: { unoptimized: true }`, so Next.js does no resizing of its own and
+ * every image has to be sized explicitly through the Sanity CDN.
+ */
+export interface SanityImageAsset {
   _id: string
-  _type: 'aiUniversityPage'
-  heroLabel: string
-  heroHeadline: string
-  heroHighlight: string
-  heroDescription: string
-  primaryButtonText: string
-  secondaryButtonText: string
-  tracksSectionTitle: string
-  tracksSectionDescription: string
-  tracks: Array<{
-    title: string
-    description: string
-    icon: string
-    color: string
-  }>
+  url: string
+  metadata?: {
+    dimensions?: {
+      width: number
+      height: number
+      aspectRatio?: number
+    }
+  }
 }
+
+export interface SanityImageWithAlt {
+  alt?: string
+  asset?: SanityImageAsset
+}
+
+/*
+ * Mirrors `aiWorkforceFactoryPage` in the Studio repo
+ * (kydon-sanity-studio/schemas/aiWorkforceFactoryPage.ts).
+ *
+ * The schema is flat with per-section name prefixes -- there are no nested
+ * objects -- so these names must match it character for character. Sanity
+ * silently drops keys it does not recognise, and a GROQ projection asking for
+ * a field that does not exist returns null rather than erroring, so a typo
+ * here surfaces as content that mysteriously never appears.
+ *
+ * Every field is optional: no top-level field in the schema has a required
+ * validation rule, an editor can leave any of them blank, and the page falls
+ * back per field to its hardcoded defaultContent.
+ */
+export interface AIWorkforceFactoryPageContent {
+  _id: string
+  _type: 'aiWorkforceFactoryPage'
+
+  // Hero
+  heroEyebrow?: string
+  heroHeadline?: string
+  heroDescription?: string
+  heroPrimaryButtonText?: string
+  heroPrimaryButtonLink?: string
+  heroSecondaryButtonText?: string
+  heroSecondaryButtonLink?: string
+  heroIllustration?: SanityImageWithAlt
+
+  // Stat strip. `source` is an internal citation note, never rendered.
+  stats?: Array<{
+    value?: string
+    description?: string
+    source?: string
+  }>
+
+  // Why
+  whyEyebrow?: string
+  whyHeading?: string
+  whyIntro?: string
+  whyCards?: Array<{
+    title?: string
+    description?: string
+    icon?: string
+  }>
+  whyClosingLine?: string
+
+  // Pipeline
+  pipelineEyebrow?: string
+  pipelineHeading?: string
+  pipelineSteps?: Array<{
+    number?: string
+    title?: string
+    description?: string
+    illustration?: SanityImageWithAlt
+  }>
+
+  // National vision. The section is gated on visionApproved -- see §3 of the
+  // change brief: the PM quote cannot be published without clearance.
+  visionEyebrow?: string
+  visionQuote?: string
+  visionAttribution?: string
+  visionApproved?: boolean
+
+  // Ecosystem. The query filters partners to `approved == true`, so an entry
+  // can be drafted in the Studio before brand permission arrives.
+  ecosystemEyebrow?: string
+  ecosystemHeading?: string
+  ecosystemBody?: string
+  ecosystemPartners?: Array<{
+    name?: string
+    logo?: SanityImageWithAlt
+    url?: string
+    approved?: boolean
+  }>
+
+  // Voices. Same approved filter -- an unapproved quote must not render.
+  voicesEyebrow?: string
+  voicesHeading?: string
+  voicesQuotes?: Array<{
+    quote?: string
+    name?: string
+    role?: string
+    photo?: SanityImageWithAlt
+    approved?: boolean
+  }>
+
+  // Audiences. Note the array is `audienceCards`, singular, unlike its
+  // `audiencesEyebrow` / `audiencesHeading` siblings.
+  audiencesEyebrow?: string
+  audiencesHeading?: string
+  audienceCards?: Array<{
+    title?: string
+    description?: string
+    icon?: string
+    linkLabel?: string
+    linkUrl?: string
+  }>
+
+  // Final CTA
+  ctaHeading?: string
+  ctaPrimaryButtonText?: string
+  ctaPrimaryButtonLink?: string
+  ctaSecondaryButtonText?: string
+  ctaSecondaryButtonLink?: string
+}
+
 
 export interface AILearningEnginePageContent {
   _id: string

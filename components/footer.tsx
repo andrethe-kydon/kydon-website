@@ -5,7 +5,7 @@ import { Layers, GraduationCap, Cpu, Building2, Landmark, School, Users } from '
 const footerLinks = {
   product: [
     { label: 'Platform', href: '/platform', icon: Layers },
-    { label: 'AI University', href: '/ai-university', icon: GraduationCap },
+    { label: 'AI Workforce Factory', href: '/ai-workforce-factory', icon: GraduationCap },
     { label: 'AI Learning Engine', href: '/ai-learning-engine', icon: Cpu },
   ],
   solutions: [

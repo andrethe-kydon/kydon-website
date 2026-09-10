@@ -91,8 +91,8 @@ export function OrganizationSchema({
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI University',
-            description: 'Role-based AI training and reskilling programs for enterprise professionals.',
+            name: 'AI Workforce Factory',
+            description: 'Trains working professionals into AI operators and places them inside companies to run real AI projects.',
           },
         },
         {

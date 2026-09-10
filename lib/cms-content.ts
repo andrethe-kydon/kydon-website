@@ -52,12 +52,12 @@ export const defaultPillars: PillarData[] = [
     ],
   },
   {
-    title: 'AI University',
+    title: 'AI Workforce Factory',
     subtitle: 'Skills & Credentials',
     label: 'Delivery & Signal Layer',
     description: 'Comprehensive AI education programs designed for every role—from executives to frontline workers—ensuring organization-wide AI fluency.',
     icon: 'graduation-cap',
-    link: '/ai-university',
+    link: '/ai-workforce-factory',
     status: 'coming-soon',
     features: [
       'Role-based AI tracks',
@@ -151,7 +151,7 @@ export async function getPillarsWithFallback(): Promise<PillarData[]> {
       // Get default status based on title if not provided by CMS
       let status: PillarStatus = pillar.status || 'live'
       if (!pillar.status) {
-        if (pillar.title === 'AI University') status = 'coming-soon'
+        if (pillar.title === 'AI Workforce Factory') status = 'coming-soon'
         else if (pillar.title === 'AI Learning Engine') status = 'beta'
         else status = 'live'
       }

@@ -1,17 +1,20 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   ArrowRight,
   Building2,
-  CircleDollarSign,
+  CircleSlash,
   Image as ImageIcon,
   Landmark,
   MessageSquare,
   Quote,
-  Unlink2,
   User,
   Users,
 } from 'lucide-react'
+import { getAIWorkforceFactoryPageContent } from '@/lib/sanity-queries'
+import { urlFor } from '@/lib/sanity'
+import type { SanityImageWithAlt } from '@/lib/sanity-types'
 import { ServiceSchema, BreadcrumbSchema } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
@@ -93,13 +96,13 @@ const defaultContent = {
           'Most courses build familiarity. Businesses need people who can build and run AI systems end to end.',
       },
       {
-        icon: 'circle-dollar-sign',
+        icon: 'circle-slash',
         title: 'SMEs priced out',
         description:
           'Enterprise-grade AI capability sits out of reach for most small and mid-sized companies.',
       },
       {
-        icon: 'unlink-2',
+        icon: 'building-2',
         title: 'No bridge to real work',
         description:
           "A certificate doesn't prove capability. Employers want to see people deliver, not just attend.",
@@ -138,8 +141,8 @@ const defaultContent = {
   nationalVision: {
     eyebrow: 'A national ambition',
     quote:
-      '“We will exploit AI to grow the economy, and we will ensure that growth translates into good jobs and better wages.”',
-    attribution: '— Prime Minister Lawrence Wong · Budget 2026 debate wrap-up speech, 26 Feb 2026',
+      'We will exploit AI to grow the economy, and we will ensure that growth translates into good jobs and better wages.',
+    attribution: 'Prime Minister Lawrence Wong · Budget 2026 debate wrap-up speech, 26 Feb 2026',
     clearanceNote: 'Real quote — verify against the official transcript and clear use before publishing.',
   },
   ecosystem: {
@@ -165,14 +168,14 @@ const defaultContent = {
     quotes: [
       {
         quote:
-          "“We didn't build the AI Workforce Factory to talk about AI. We built it because Singapore doesn't have enough people who can actually run it — and because a lot of capable people are being left out of that conversation. This is our way of closing that gap, at scale, with a real job on the other side of it.”",
+          "We didn't build the AI Workforce Factory to talk about AI. We built it because Singapore doesn't have enough people who can actually run it — and because a lot of capable people are being left out of that conversation. This is our way of closing that gap, at scale, with a real job on the other side of it.",
         name: 'David Yeo',
         role: 'Founder & CEO, Kydon Group',
         clearanceNote: 'Draft — rewrite in your own voice.',
       },
       {
         quote:
-          '“AI is only as useful as the people who can operate it inside a real business. Partnering with Kydon on the AI Workforce Factory lets us extend that principle beyond our own students — into a pipeline that trains, tests, and places AI-ready talent directly where Singapore’s economy needs it most.”',
+          'AI is only as useful as the people who can operate it inside a real business. Partnering with Kydon on the AI Workforce Factory lets us extend that principle beyond our own students — into a pipeline that trains, tests, and places AI-ready talent directly where Singapore’s economy needs it most.',
         name: 'Soh Wai Wah',
         role: 'Principal & CEO, Singapore Polytechnic',
         clearanceNote: "Proposed — pending Singapore Polytechnic's confirmation.",
@@ -218,8 +221,8 @@ const defaultContent = {
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'message-square': MessageSquare,
-  'circle-dollar-sign': CircleDollarSign,
-  'unlink-2': Unlink2,
+  'circle-slash': CircleSlash,
+  'building-2': Building2,
   'users': Users,
   'building': Building2,
   'landmark': Landmark,
@@ -275,8 +278,194 @@ function ClearanceNote({ children, className = '' }: { children: React.ReactNode
   )
 }
 
-export default function AIWorkforceFactoryPage() {
-  const content = defaultContent
+// next.config.js sets `images: { unoptimized: true }`, so Next.js resizes
+// nothing -- every Sanity image has to be sized through the Sanity CDN via
+// urlFor(). Height comes from the asset's own metadata so the box never
+// reflows; fallbackHeight covers an asset whose metadata is missing.
+// `format` is skipped for partner logos: they may be SVG, and the CDN does not
+// transcode SVG, so forcing webp would silently do nothing.
+function CmsImage({
+  image,
+  width,
+  fallbackHeight,
+  alt,
+  className,
+  transcode = true,
+}: {
+  image: SanityImageWithAlt
+  width: number
+  fallbackHeight: number
+  alt: string
+  className?: string
+  transcode?: boolean
+}) {
+  const dims = image.asset?.metadata?.dimensions
+  const height =
+    dims?.width && dims?.height ? Math.round((dims.height / dims.width) * width) : fallbackHeight
+  const builder = urlFor(image).width(width)
+  return (
+    <Image
+      src={(transcode ? builder.format('webp') : builder).url()}
+      alt={image.alt ?? alt}
+      width={width}
+      height={height}
+      className={className}
+    />
+  )
+}
+
+function withAsset(image?: SanityImageWithAlt): SanityImageWithAlt | null {
+  return image?.asset?._id ? image : null
+}
+
+function nonEmpty<T>(arr?: T[] | null): T[] | null {
+  return Array.isArray(arr) && arr.length > 0 ? arr : null
+}
+
+// Blank strings in the Studio should not blank the page.
+function text(value: string | undefined | null, fallback: string): string {
+  const trimmed = typeof value === 'string' ? value.trim() : ''
+  return trimmed.length > 0 ? trimmed : fallback
+}
+
+export default async function AIWorkforceFactoryPage() {
+  const cms = await getAIWorkforceFactoryPageContent()
+  const d = defaultContent
+
+  // With no published document the page renders the hardcoded fallback, which
+  // still carries the visible clearance notes marking it as pre-approval
+  // review content. Once a document exists, the Studio governs -- including
+  // the approved gates, which is why the gated arrays never fall back.
+  const isFallback = !cms
+
+  const content = {
+    hero: {
+      eyebrow: text(cms?.heroEyebrow, d.hero.eyebrow),
+      headline: text(cms?.heroHeadline, d.hero.headline),
+      body: text(cms?.heroDescription, d.hero.body),
+      primaryCta: {
+        label: text(cms?.heroPrimaryButtonText, d.hero.primaryCta.label),
+        url: text(cms?.heroPrimaryButtonLink, d.hero.primaryCta.url),
+      },
+      secondaryCta: {
+        label: text(cms?.heroSecondaryButtonText, d.hero.secondaryCta.label),
+        url: text(cms?.heroSecondaryButtonLink, d.hero.secondaryCta.url),
+      },
+      placeholder: d.hero.illustration,
+      image: withAsset(cms?.heroIllustration),
+    },
+    stats:
+      nonEmpty(cms?.stats)?.map((s, i) => ({
+        value: text(s.value, d.stats[i]?.value ?? ''),
+        description: text(s.description, d.stats[i]?.description ?? ''),
+      })) ?? d.stats,
+    why: {
+      eyebrow: text(cms?.whyEyebrow, d.why.eyebrow),
+      heading: text(cms?.whyHeading, d.why.heading),
+      intro: text(cms?.whyIntro, d.why.intro),
+      cards:
+        nonEmpty(cms?.whyCards)?.map((c, i) => ({
+          icon: text(c.icon, d.why.cards[i]?.icon ?? 'message-square'),
+          title: text(c.title, ''),
+          description: text(c.description, ''),
+        })) ?? d.why.cards,
+      closingLine: text(cms?.whyClosingLine, d.why.closingLine),
+    },
+    pipeline: {
+      eyebrow: text(cms?.pipelineEyebrow, d.pipeline.eyebrow),
+      heading: text(cms?.pipelineHeading, d.pipeline.heading),
+      steps:
+        nonEmpty(cms?.pipelineSteps)?.map((s, i) => ({
+          number: text(s.number, d.pipeline.steps[i]?.number ?? ''),
+          title: text(s.title, ''),
+          description: text(s.description, ''),
+          placeholder: d.pipeline.steps[i]?.illustration.description ?? '',
+          image: withAsset(s.illustration),
+        })) ??
+        d.pipeline.steps.map((s) => ({
+          number: s.number,
+          title: s.title,
+          description: s.description,
+          placeholder: s.illustration.description,
+          image: null as SanityImageWithAlt | null,
+        })),
+    },
+    nationalVision: {
+      eyebrow: text(cms?.visionEyebrow, d.nationalVision.eyebrow),
+      quote: text(cms?.visionQuote, d.nationalVision.quote),
+      attribution: text(cms?.visionAttribution, d.nationalVision.attribution),
+    },
+    ecosystem: {
+      eyebrow: text(cms?.ecosystemEyebrow, d.ecosystem.eyebrow),
+      heading: text(cms?.ecosystemHeading, d.ecosystem.heading),
+      body: text(cms?.ecosystemBody, d.ecosystem.body),
+      // Gated: the query already filtered to approved == true, so an empty
+      // result means nothing is cleared yet. Never fall back here -- that
+      // would put an unpermissioned partner on the page.
+      partners: cms
+        ? (cms.ecosystemPartners ?? []).map((partner) => ({
+            name: partner.name ?? '',
+            logo: withAsset(partner.logo),
+            url: partner.url,
+          }))
+        : d.ecosystem.partners.map((partner) => ({
+            name: partner.name,
+            logo: null as SanityImageWithAlt | null,
+            url: undefined as string | undefined,
+          })),
+      clearanceNote: d.ecosystem.clearanceNote,
+    },
+    voices: {
+      eyebrow: text(cms?.voicesEyebrow, d.voices.eyebrow),
+      heading: text(cms?.voicesHeading, d.voices.heading),
+      // Gated in the same way: an unapproved quote must not render.
+      quotes: cms
+        ? (cms.voicesQuotes ?? []).map((entry) => ({
+            quote: entry.quote ?? '',
+            name: entry.name ?? '',
+            role: entry.role ?? '',
+            photo: withAsset(entry.photo),
+            clearanceNote: '',
+          }))
+        : d.voices.quotes.map((entry) => ({
+            quote: entry.quote,
+            name: entry.name,
+            role: entry.role,
+            photo: null as SanityImageWithAlt | null,
+            clearanceNote: entry.clearanceNote,
+          })),
+    },
+    audiences: {
+      eyebrow: text(cms?.audiencesEyebrow, d.audiences.eyebrow),
+      heading: text(cms?.audiencesHeading, d.audiences.heading),
+      cards:
+        nonEmpty(cms?.audienceCards)?.map((c, i) => ({
+          icon: text(c.icon, d.audiences.cards[i]?.icon ?? 'users'),
+          title: text(c.title, ''),
+          description: text(c.description, ''),
+          linkLabel: text(c.linkLabel, ''),
+          linkUrl: text(c.linkUrl, '/contact'),
+        })) ?? d.audiences.cards,
+    },
+    finalCta: {
+      heading: text(cms?.ctaHeading, d.finalCta.heading),
+      primaryCta: {
+        label: text(cms?.ctaPrimaryButtonText, d.finalCta.primaryCta.label),
+        url: text(cms?.ctaPrimaryButtonLink, d.finalCta.primaryCta.url),
+      },
+      secondaryCta: {
+        label: text(cms?.ctaSecondaryButtonText, d.finalCta.secondaryCta.label),
+        url: text(cms?.ctaSecondaryButtonLink, d.finalCta.secondaryCta.url),
+      },
+    },
+  }
+
+  // The PM quote is a hard publication gate, and it fails closed: the section
+  // renders only on an explicit visionApproved === true from the Studio. No
+  // published document, an unreachable Sanity, or an unset flag all mean the
+  // quote stays off the page -- an unverified attribution to the Prime
+  // Minister is not something the defaultContent fallback should ever put up.
+  const showVision = cms?.visionApproved === true
 
   return (
     <>
@@ -322,11 +511,21 @@ export default function AIWorkforceFactoryPage() {
                   </Link>
                 </div>
               </div>
-              <IllustrationPlaceholder
-                description={content.hero.illustration.description}
-                dimensions={content.hero.illustration.dimensions}
-                className="min-h-[380px]"
-              />
+              {content.hero.image ? (
+                <CmsImage
+                  image={content.hero.image}
+                  width={1200}
+                  fallbackHeight={1400}
+                  alt={content.hero.headline}
+                  className="w-full h-auto rounded-2xl"
+                />
+              ) : (
+                <IllustrationPlaceholder
+                  description={content.hero.placeholder.description}
+                  dimensions={content.hero.placeholder.dimensions}
+                  className="min-h-[380px]"
+                />
+              )}
             </div>
           </div>
         </section>
@@ -349,10 +548,12 @@ export default function AIWorkforceFactoryPage() {
                 </div>
               ))}
             </div>
-            <ClearanceNote className="mt-6">
-              Figures unsourced in the design reference — verify each against its primary source and
-              keep a citation record before publishing.
-            </ClearanceNote>
+            {isFallback ? (
+              <ClearanceNote className="mt-6">
+                Figures unsourced in the design reference — verify each against its primary source
+                and keep a citation record before publishing.
+              </ClearanceNote>
+            ) : null}
           </div>
         </section>
 
@@ -409,40 +610,51 @@ export default function AIWorkforceFactoryPage() {
                   <p className="text-sm text-neutral-600 leading-relaxed flex-grow">
                     {step?.description ?? ''}
                   </p>
-                  <IllustrationPlaceholder
-                    description={step?.illustration?.description ?? ''}
-                    className="mt-5 min-h-[150px]"
-                  />
+                  {step?.image ? (
+                    <CmsImage
+                      image={step.image}
+                      width={800}
+                      fallbackHeight={600}
+                      alt={step?.title ?? ''}
+                      className="w-full h-auto rounded-2xl mt-5"
+                    />
+                  ) : (
+                    <IllustrationPlaceholder
+                      description={step?.placeholder ?? ''}
+                      className="mt-5 min-h-[150px]"
+                    />
+                  )}
                 </div>
               ))}
             </div>
 
-            <ClearanceNote className="mt-8">
-              Claims to confirm as contractually accurate and currently true: “funded up to 95%
-              through SkillsFuture”, “built together with Singapore Polytechnic”, and the bridged
-              Train-and-Place employment arrangement.
-            </ClearanceNote>
+            {isFallback ? (
+              <ClearanceNote className="mt-8">
+                Claims to confirm as contractually accurate and currently true: “funded up to 95%
+                through SkillsFuture”, “built together with Singapore Polytechnic”, and the bridged
+                Train-and-Place employment arrangement.
+              </ClearanceNote>
+            ) : null}
           </div>
         </section>
 
-        {/* National vision */}
+        {/* National vision - hidden until visionApproved is set in the Studio */}
+        {showVision ? (
         <section className="py-20 bg-neutral-50 border-t-2 border-primary/30">
           <div className="max-w-container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <Eyebrow>{content.nationalVision.eyebrow}</Eyebrow>
               <Quote className="w-10 h-10 text-primary mx-auto mt-6" aria-hidden="true" />
               <blockquote className="text-xl md:text-2xl italic text-neutral-700 mt-5 leading-relaxed">
-                {content.nationalVision.quote}
+                &ldquo;{content.nationalVision.quote}&rdquo;
               </blockquote>
               <p className="text-sm font-semibold uppercase tracking-wide text-neutral-600 mt-6">
-                {content.nationalVision.attribution}
+                &mdash; {content.nationalVision.attribution}
               </p>
-              <ClearanceNote className="mt-6 inline-block text-left">
-                {content.nationalVision.clearanceNote}
-              </ClearanceNote>
             </div>
           </div>
         </section>
+        ) : null}
 
         {/* Ecosystem */}
         <section id="ecosystem" className="py-20 bg-white">
@@ -455,27 +667,49 @@ export default function AIWorkforceFactoryPage() {
               {content.ecosystem.body}
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              {content.ecosystem.partners.map((partner, i) => (
-                <div
-                  key={partner?.name ?? `partner-${i}`}
-                  className="h-[84px] px-4 py-2 flex flex-col items-center justify-center gap-1 text-center rounded-xl border-[1.5px] border-dashed border-neutral-300 bg-neutral-50"
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-neutral-500">
-                    Logo
-                  </span>
-                  <span className="text-sm font-semibold text-neutral-700 leading-snug">
-                    {partner?.name ?? ''}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {content.ecosystem.partners.length > 0 ? (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                {content.ecosystem.partners.map((partner, i) => (
+                  <div
+                    key={partner?.name ?? `partner-${i}`}
+                    className={`h-[84px] px-4 py-2 flex flex-col items-center justify-center gap-1 text-center rounded-xl ${
+                      partner.logo
+                        ? 'border border-neutral-100 bg-white shadow-sm'
+                        : 'border-[1.5px] border-dashed border-neutral-300 bg-neutral-50'
+                    }`}
+                  >
+                    {partner.logo ? (
+                      <CmsImage
+                        image={partner.logo}
+                        width={300}
+                        fallbackHeight={100}
+                        alt={partner?.name ?? ''}
+                        className="max-h-[60px] w-auto object-contain"
+                        transcode={false}
+                      />
+                    ) : (
+                      <>
+                        <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-neutral-500">
+                          Logo
+                        </span>
+                        <span className="text-sm font-semibold text-neutral-700 leading-snug">
+                          {partner?.name ?? ''}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
-            <ClearanceNote className="mt-6">{content.ecosystem.clearanceNote}</ClearanceNote>
+            {isFallback ? (
+              <ClearanceNote className="mt-6">{content.ecosystem.clearanceNote}</ClearanceNote>
+            ) : null}
           </div>
         </section>
 
-        {/* Voices */}
+        {/* Voices - only approved quotes reach this array */}
+        {content.voices.quotes.length > 0 ? (
         <section id="voices" className="py-20 bg-neutral-50">
           <div className="max-w-container mx-auto px-6">
             <Eyebrow>{content.voices.eyebrow}</Eyebrow>
@@ -489,24 +723,37 @@ export default function AIWorkforceFactoryPage() {
                   key={entry?.name ?? `voice-${i}`}
                   className="bg-white rounded-2xl p-7 border border-neutral-100 shadow-sm hover:shadow-xl transition-all card-hover flex flex-col sm:flex-row gap-5 items-start"
                 >
-                  <div className="w-[88px] h-[88px] flex-shrink-0 rounded-full border-[1.5px] border-dashed border-neutral-300 bg-neutral-50 flex items-center justify-center">
-                    <User className="w-8 h-8 text-neutral-400" aria-hidden="true" />
-                  </div>
+                  {entry?.photo ? (
+                    <CmsImage
+                      image={entry.photo}
+                      width={176}
+                      fallbackHeight={176}
+                      alt={entry?.name ?? ''}
+                      className="w-[88px] h-[88px] flex-shrink-0 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-[88px] h-[88px] flex-shrink-0 rounded-full border-[1.5px] border-dashed border-neutral-300 bg-neutral-50 flex items-center justify-center">
+                      <User className="w-8 h-8 text-neutral-400" aria-hidden="true" />
+                    </div>
+                  )}
                   <div>
                     <blockquote className="text-[15px] italic text-neutral-600 leading-relaxed">
-                      {entry?.quote ?? ''}
+                      &ldquo;{entry?.quote ?? ''}&rdquo;
                     </blockquote>
                     <p className="text-sm font-bold text-neutral-900 mt-4">{entry?.name ?? ''}</p>
                     <p className="text-xs font-semibold uppercase tracking-wide text-neutral-600 mt-1">
                       {entry?.role ?? ''}
                     </p>
-                    <ClearanceNote className="mt-3">{entry?.clearanceNote ?? ''}</ClearanceNote>
+                    {entry?.clearanceNote ? (
+                      <ClearanceNote className="mt-3">{entry.clearanceNote}</ClearanceNote>
+                    ) : null}
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+        ) : null}
 
         {/* Audiences */}
         <section id="audiences" className="py-20 bg-white">

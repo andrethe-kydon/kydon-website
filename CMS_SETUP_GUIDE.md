@@ -6,16 +6,16 @@ This website is integrated with **Sanity CMS**, allowing you to edit content wit
 
 ## Your Sanity Credentials
 
-- **Project ID:** wg3ga4x6
+- **Project ID:** rndr2995
 - **Dataset:** production
-- **Sanity Studio URL:** https://www.sanity.io/manage/project/wg3ga4x6
+- **Sanity Studio URL:** https://www.sanity.io/manage/project/rndr2995
 
 ## Setting Up Sanity Studio
 
 ### Option 1: Use Sanity's Web Interface (Easiest)
 
 1. Go to [sanity.io/manage](https://www.sanity.io/manage)
-2. Select your project (wg3ga4x6)
+2. Select your project (rndr2995)
 3. Click on "Content" to add/edit content
 
 ### Option 2: Set Up Local Sanity Studio (More Features)
@@ -23,7 +23,7 @@ This website is integrated with **Sanity CMS**, allowing you to edit content wit
 Run these commands to create a local Sanity Studio:
 
 ```bash
-npm create sanity@latest -- --project wg3ga4x6 --dataset production --template clean
+npm create sanity@latest -- --project rndr2995 --dataset production --template clean
 cd your-studio-folder
 npm run dev
 ```

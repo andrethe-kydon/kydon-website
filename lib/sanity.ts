@@ -5,7 +5,7 @@ import { createImageUrlBuilder } from '@sanity/image-url'
 // browser anyway), so we fall back to them to guarantee a valid configuration.
 // Newer versions of @sanity/client throw at import time if projectId is empty,
 // which would crash the entire build if the env var were missing on the host.
-const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'wg3ga4x6'
+const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'rndr2995'
 const SANITY_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
 export const sanityClient = createClient({

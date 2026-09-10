@@ -72,10 +72,10 @@ export default function EducationVerticalPage() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/ai-university"
+                href="/ai-workforce-factory"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all"
               >
-                Explore AI University
+                Explore the AI Workforce Factory
               </Link>
             </div>
           </motion.div>

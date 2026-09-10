@@ -25,7 +25,7 @@ const defaultPillars: PillarData[] = [
   },
   {
     label: 'Delivery & Signal Layer',
-    title: 'AI University',
+    title: 'AI Workforce Factory',
     subtitle: 'Skills & Credentials',
     icon: 'graduation-cap',
     features: [
@@ -33,7 +33,7 @@ const defaultPillars: PillarData[] = [
       'Credentials / Skills Passport',
       'Continuous readiness/performance signals',
     ],
-    link: '/ai-university',
+    link: '/ai-workforce-factory',
     status: 'coming-soon',
   },
   {
