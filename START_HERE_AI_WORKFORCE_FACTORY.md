@@ -17,14 +17,9 @@ Replace `kydongrp.com/ai-university` with a new "AI Workforce Factory" page at `
 
 `BRAND_ALIGNMENT_CHANGE_BRIEF.md` (Agnes, 10 Sep) §7 states it directly: merge brand alignment to `main` first, then rebase the Workforce Factory branch onto it. The reverse means resolving colour conflicts inside a branch that can't ship.
 
-The reasoning holds up:
+In practice this has already happened: the brand work ran ahead on `feature/brand-alignment` and is essentially complete (see Phase 1). So the page gets built on top of finished brand tokens and the confirmed fonts, rather than against the old off-brand `#F15522` and Inter.
 
-- Brand alignment is **unblocked**. The colour work is ready to start.
-- The Workforce Factory page is **blocked** on David's third-party clearances regardless.
-- Building the page first means building against `#F15522` — an orange already known to be off-brand — then rebasing onto a changed palette.
-- The token retokenisation is only three central files. Fast, and it makes the page correct from the first line.
-
-So: **brand tokens first, then the page.**
+**Start at Phase 2.** Phase 1 is retained below as a record of what's done and what Agnes still owes.
 
 ---
 
@@ -52,7 +47,7 @@ So: **brand tokens first, then the page.**
 | **D4** | Ecosystem partners: logo upload, unlimited, add over time. |
 | **D5** | Testimonials: quote + name + role + photo upload. |
 | **D6** | **This page is Kydon Group → orange primary.** No `data-brand="klsi"` wrapper; default `:root` tokens apply. |
-| **D7** | **No new fonts.** Use `font-sans`. Typeface is Agnes's call, blocked on the Futura licence. |
+| **D7** | **Fonts are settled** — Agnes confirmed **Montserrat** for body, **League Spartan** for headings and subheadings, both self-hosted via `next/font/google`. The page inherits them; add no font families. |
 | **—** | Build now, **don't merge the page** until clearances land. |
 
 ---
@@ -65,49 +60,35 @@ So: **brand tokens first, then the page.**
 
 ---
 
-# PHASE 1 — Brand tokens
+# PHASE 1 — Brand tokens ✅ essentially done
 
-Follow `BRAND_ALIGNMENT_CHANGE_BRIEF.md` §5, steps 1–4 only. The heavy work in §6 (repainting the KLSI page, off-brand hand-edits) does **not** block the page and can come later.
+Already committed on `feature/brand-alignment` (pushed to origin), latest `185ad37`:
 
-## 1.1 Branch
+- Colour retokenisation — brand CSS variables, rebuilt neutral scale, dead purple removed
+- KLSI blue scoping, uniform card bodies, brand band, CTA ring
+- Two accessibility passes — CTA fills, white-panel buttons, hover states
+- Contrast sweep — small-text primary uses, panel gradients, badge and icon tints, footer hover
+- **Font swap** — Montserrat body, League Spartan headings
+
+`BRAND_ALIGNMENT_CHANGE_BRIEF.md` in the repo root is **stale**: it still says font work is blocked on the Futura licence. Agnes has since confirmed Montserrat and League Spartan, both Google Fonts, no licence needed. Worth annotating the brief so nobody reads it and reverts course.
+
+## What's left
+
+**Agnes still owes the colour sign-off** — five derived shades per brand, plus the finding that brand orange and blue can't sit directly against each other (1.61:1) without a white or grey edge. That list is final and ready to send.
+
+Also outstanding from the brand brief, none of it blocking this page: SVG logos for both brands, the 40° trapezium and triangle vectors, and the guide inconsistencies raised with Agnes.
+
+## Before starting Phase 2
+
+Confirm nothing is uncommitted and the branch is where you left it:
 
 ```bash
 cd ~/kydon-website
-git checkout main
-git pull origin main
-git checkout -b feature/brand-alignment
-yarn dev   # separate terminal tab, leave running
+git status --short
+git log --oneline -1
 ```
 
-## 1.2 Prompt for Claude Code
-
-> Read `BRAND_ALIGNMENT_CHANGE_BRIEF.md` in the repo root before doing anything.
->
-> Do steps 2, 3 and 4 from section 5 of that brief, plus the loose end in section 8. Specifically:
->
-> 1. Retokenise `tailwind.config.ts` — brand colours as CSS variables per section 4a, the rebuilt neutral scale per section 4b, and remove the `primary`/`accent` duplication.
-> 2. Clean `app/globals.css` — delete the dead purple variables, fix `.gradient-text` and `.card-hover` to use brand colours, and remove the redundant Inter `@import`.
-> 3. Update `themeColor` in `app/layout.tsx` to the brand orange.
-> 4. Define the missing `accent.foreground` token (section 8) so the 25 `text-accent-foreground` uses resolve. Check its contrast against the orange fill.
->
-> Do not do section 6 — no page-file hand edits yet. Do not touch `middleware.ts`, `app/ai-university/page.tsx`, or any font loading.
-
-## 1.3 Check
-
-Walk the homepage and the pages listed in §6 of Agnes's brief. Look specifically at:
-
-- The homepage hero — `.gradient-text` was blending purple into a non-brand orange
-- Card shadows — `.card-hover` was casting purple
-- Buttons on orange fills — the `accent-foreground` fix
-- Body copy legibility on the rebuilt neutral scale
-
-## 1.4 Commit, then decide
-
-```bash
-git add -A && git commit -m "Retokenise brand colours per Agnes brand guides"
-```
-
-Then per rule 2: either get Agnes's confirmation and merge to `main`, or leave it on this branch and build the page off it.
+Should be clean at `185ad37` (or later, if you've pushed more since).
 
 ---
 
@@ -144,7 +125,11 @@ git checkout -b feature/ai-workforce-factory
 > - No white text on an orange fill at normal size — large or bold only.
 > - Body copy `neutral-600`, headings `neutral-900`.
 >
-> Typography: use `font-sans` only. Do not add font families.
+> Typography — the site now uses Montserrat for body and League Spartan for headings, both already loaded. Do not add or import any font family.
+> - Use semantic `h1`–`h4` tags for all headings. A global rule in `globals.css` applies League Spartan to those automatically.
+> - If any `div` or `span` carries heading-scale text (`text-2xl` and above), give it the existing `font-display` utility class, or it will render in Montserrat.
+> - League Spartan has a larger x-height and tighter tracking than the reference assumed, so headings will render bigger and denser at the same size class. Montserrat is wider than Inter, so body copy takes more horizontal space and cards may gain a line.
+> - **Flag anything that overflows or wraps awkwardly rather than silently stepping down size classes.** I want to see the list before any retuning.
 >
 > Also: strip the reference's own nav and footer, use `lucide-react` icons rather than the inline SVGs, use `next/link` for internal links and `<a target="_blank">` only for futureedgeinstitute.com, and fix the duplicate `class` attribute on line 186 of the reference.
 >
@@ -266,8 +251,9 @@ Vercel deploys automatically. Verify the redirect, check the OG preview, resubmi
 | **Is `factory.kydongrp.com` live?** | An April project in `~/Downloads/kydon-ai-workforce-factory-latest.zip` is a separate standalone landing page for "AI Workforce Factory & OPC Launchpad", built for that subdomain with a HubSpot waitlist form. If deployed, two pages share the name and will compete in search. Decide: replace, link, or distinct audiences? |
 | **Salvage the FAQ?** | That zip has `components/FAQ.tsx`, ~6.5KB of written FAQ copy absent from David's reference. Code isn't portable (CSS Modules) but copy is. Its `Hero.tsx` `stats` array may hold the sourcing for the three national figures. |
 | **Nav placement** | Page currently sits in the Solutions dropdown. Stay, or move under Businesses next to FEI? Not needed until 2.4. |
-| **Agnes: colour confirmation** | Blocks merging brand work to `main`. See rule 2. |
-| **Agnes: Futura licence** | Blocks all font work. Not blocking anything here. |
+| **Agnes: colour sign-off** | Five derived shades per brand, plus the orange-on-blue 1.61:1 finding. Blocks merging brand work to `main` — see rule 2. List is final and ready to send. |
+| **Agnes: assets** | SVG logos both brands (standard + reverse white), 40° trapezium and triangle vectors. `/public` holds only `kydon-logo.png` and `kydon-logo-light.png`. |
+| ~~Agnes: Futura licence~~ | **Resolved** — Montserrat and League Spartan confirmed, both Google Fonts. |
 
 ---
 
