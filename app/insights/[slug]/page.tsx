@@ -277,7 +277,7 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
           >
             Get in Touch
           </Link>

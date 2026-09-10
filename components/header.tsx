@@ -117,7 +117,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className="px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+              className="px-5 py-2.5 bg-primary-dark text-white font-medium text-sm rounded-lg hover:bg-primary-darker transition-colors shadow-lg shadow-primary/20"
             >
               Contact Us
             </Link>
@@ -180,7 +180,7 @@ export function Header() {
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="block w-full px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg text-center"
+                  className="block w-full px-5 py-2.5 bg-primary-dark text-white font-medium text-sm rounded-lg text-center"
                   onClick={() => setMobileOpen(false)}
                 >
                   Contact Us

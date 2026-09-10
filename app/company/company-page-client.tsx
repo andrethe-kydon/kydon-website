@@ -257,7 +257,7 @@ export default function CompanyPageClient({ companyContent, leaders }: CompanyPa
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all"
             >
               Get in Touch
               <ArrowRight className="w-5 h-5" />

@@ -46,7 +46,7 @@ export default function AILearningEnginePage() {
               <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent font-medium text-sm rounded-full">
                 Intelligence Layer
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-500/20 text-purple-300 font-semibold text-sm rounded-full border border-purple-400/30">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/15 text-white font-semibold text-sm rounded-full border border-white/25">
                 <FlaskConical className="w-4 h-4" />
                 Beta
               </span>
@@ -78,9 +78,9 @@ export default function AILearningEnginePage() {
       </section>
 
       {/* Beta Banner */}
-      <section className="py-6 bg-purple-50 border-y border-purple-200">
+      <section className="py-6 bg-neutral-200 border-y border-neutral-300">
         <div className="max-w-container mx-auto px-6">
-          <div className="flex items-center justify-center gap-3 text-purple-800">
+          <div className="flex items-center justify-center gap-3 text-neutral-800">
             <FlaskConical className="w-5 h-5" />
             <p className="font-medium">
               AI Learning Engine is currently in Beta. We are working with select partners to refine and expand our capabilities.

@@ -60,11 +60,11 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const statusBadges: Record<string, { label: string; className: string }> = {
   'coming-soon': {
     label: 'Coming Soon',
-    className: 'bg-amber-100 text-amber-700 border-amber-200',
+    className: 'bg-neutral-50 text-neutral-600',
   },
   'beta': {
     label: 'Beta',
-    className: 'bg-purple-100 text-purple-700 border-purple-200',
+    className: 'bg-neutral-200 text-neutral-800',
   },
   'live': {
     label: '',
@@ -119,7 +119,7 @@ export function PillarsSection({ pillars }: PillarsSectionProps) {
                     {pillar?.title ?? ''}
                   </h3>
                   {statusInfo && (
-                    <span className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-full border ${statusInfo.className}`}>
+                    <span className={`inline-block px-2.5 py-1 text-xs font-semibold rounded-full border border-neutral-300 ${statusInfo.className}`}>
                       {statusInfo.label}
                     </span>
                   )}

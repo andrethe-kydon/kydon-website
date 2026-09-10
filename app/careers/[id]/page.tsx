@@ -195,7 +195,7 @@ export default async function JobDetailPage({ params }: { params: { id: string }
               href={applyLink}
               target={isExternalLink ? '_blank' : undefined}
               rel={isExternalLink ? 'noopener noreferrer' : undefined}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
             >
               {position.applyEmail ? (
                 <><Mail className="w-4 h-4" /> Apply via Email</>
@@ -238,7 +238,7 @@ export default async function JobDetailPage({ params }: { params: { id: string }
             <ul className="space-y-3">
               {position.requirements.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-neutral-600">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-primary-dark flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -273,7 +273,7 @@ export default async function JobDetailPage({ params }: { params: { id: string }
             href={applyLink}
             target={isExternalLink ? '_blank' : undefined}
             rel={isExternalLink ? 'noopener noreferrer' : undefined}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
           >
             {position.applyEmail ? (
               <><Mail className="w-5 h-5" /> Apply via Email</>

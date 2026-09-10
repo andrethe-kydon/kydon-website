@@ -203,7 +203,7 @@ export default async function CareersPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
               >
                 Get in Touch
                 <ArrowRight className="w-4 h-4" />
@@ -248,7 +248,7 @@ export default async function CareersPage() {
                           <div className="flex-shrink-0">
                             <Link
                               href={`/careers/${position._id}`}
-                              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all text-sm"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-dark text-white font-semibold rounded-lg hover:bg-primary-darker transition-all text-sm"
                             >
                               View Details
                               <ArrowRight className="w-4 h-4" />
@@ -278,7 +278,7 @@ export default async function CareersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />

@@ -7,15 +7,21 @@
  * (bg-primary/10, shadow-primary/25) keep working.
  *
  * Base values come from the brand guides: Pantone Orange 021 C (254 80 0) and
- * Pantone Blue 2995 C (0 163 224). The -dark variants are the accessible link
- * variants that clear 4.5:1 on white; the -light variants are derived tints.
+ * Pantone Blue 2995 C (0 163 224). Both are ~3:1 on white, so they carry large
+ * headings, panels and graphics but never a white button label.
+ *
+ * -dark is the accessible variant that clears 4.5:1 on white and is what CTA
+ * fills and small links use. -darker is the hover step below it. -light is a
+ * derived tint for washes and blur fills only -- 2.1-2.4:1, never text.
  */
 :root {
   --brand-primary: 254 80 0;
   --brand-primary-dark: 209 68 0;
+  --brand-primary-darker: 171 56 0;
   --brand-primary-light: 254 133 77;
   --brand-accent: 0 163 224;
   --brand-accent-dark: 0 120 168;
+  --brand-accent-darker: 0 98 138;
   --brand-accent-light: 77 191 233;
 }
 
@@ -23,9 +29,11 @@
 [data-brand='klsi'] {
   --brand-primary: 0 163 224;
   --brand-primary-dark: 0 120 168;
+  --brand-primary-darker: 0 98 138;
   --brand-primary-light: 77 191 233;
   --brand-accent: 254 80 0;
   --brand-accent-dark: 209 68 0;
+  --brand-accent-darker: 171 56 0;
   --brand-accent-light: 254 133 77;
 }
 

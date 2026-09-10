@@ -26,7 +26,7 @@ export default function EducationPage() {
             <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
               Prepare students for the AI economy with cutting-edge learning experiences. From K-12 to higher education, we help institutions deliver relevant, personalized AI education.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25">
               Learn More <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

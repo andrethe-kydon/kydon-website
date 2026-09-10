@@ -26,7 +26,7 @@ export default function GovernmentPage() {
             <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
               Trusted by ministries and government agencies to deliver AI-powered learning at national scale. From defense to education, we power workforce transformation across the public sector.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

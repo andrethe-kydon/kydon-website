@@ -27,7 +27,7 @@ export default function ZillearnBinaRiyaPage() {
               Our Indonesian learning solutions division. Zillearn Bina Riya brings world-class AI-powered learning to Indonesia, serving enterprises, communities, and individuals across the archipelago.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25">
                 Contact Us <ArrowRight className="w-5 h-5" />
               </Link>
               <div className="flex items-center gap-2 px-4 py-3.5 bg-white rounded-xl border border-neutral-200">
@@ -63,7 +63,7 @@ export default function ZillearnBinaRiyaPage() {
         <div className="max-w-container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Partner with us in Indonesia</h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">Bring world-class AI learning solutions to your Indonesian organization</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
             Get in Touch <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

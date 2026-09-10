@@ -14,15 +14,23 @@ const config: Config = {
         // `data-brand` wrapper can flip a whole section between the Kydon Group
         // palette (orange primary, blue accent) and KLSI (blue primary, orange
         // accent) without touching any page file.
+        //
+        // DEFAULT is full-strength brand: large headings, panels, graphics.
+        // It is ~3:1 on white, so it must not carry a white button label --
+        // CTA fills use `dark` (4.6:1) and hover to `darker`.
         primary: {
           DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
           dark: 'rgb(var(--brand-primary-dark) / <alpha-value>)',
+          darker: 'rgb(var(--brand-primary-darker) / <alpha-value>)',
+          // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-primary-light) / <alpha-value>)',
           foreground: '#FFFFFF',
         },
         accent: {
           DEFAULT: 'rgb(var(--brand-accent) / <alpha-value>)',
           dark: 'rgb(var(--brand-accent-dark) / <alpha-value>)',
+          darker: 'rgb(var(--brand-accent-darker) / <alpha-value>)',
+          // Background-only: ~2.1-2.4:1 on white, never use as a text colour.
           light: 'rgb(var(--brand-accent-light) / <alpha-value>)',
           foreground: '#FFFFFF',
         },

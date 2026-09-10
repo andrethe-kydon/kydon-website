@@ -26,7 +26,7 @@ export default function EnterprisePage() {
             <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
               Transform workforce development with AI-powered learning that aligns skills to business outcomes. Trusted by Fortune 500 companies and global organizations.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
@@ -53,7 +53,7 @@ export default function EnterprisePage() {
         <div className="max-w-container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to transform your enterprise?</h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">Join 100+ enterprises using Kydon to build AI-ready workforces</p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 hover:shadow-lg transition-all">
             Get Started <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

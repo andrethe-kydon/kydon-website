@@ -51,7 +51,7 @@ const learningPaths = [
     title: 'Academic Solutions',
     description: 'Comprehensive learning management for schools, colleges, and universities with curriculum mapping, assessment tools, and student progress tracking.',
     features: ['Curriculum Management', 'Student Analytics', 'Assessment Builder', 'Parent Portals'],
-    gradient: 'from-blue-500 to-blue-600',
+    gradient: 'from-accent-dark to-accent-darker',
     href: '/contact'
   },
   {
@@ -67,7 +67,7 @@ const learningPaths = [
     title: 'AI-Powered LMS',
     description: 'Next-generation learning management powered by autonomous AI agents that personalize pathways, automate administration, and deliver just-in-time learning.',
     features: ['Adaptive Pathways', 'AI Recommendations', 'Smart Nudges', 'Auto-reporting'],
-    gradient: 'from-purple-500 to-purple-600',
+    gradient: 'from-primary-dark to-primary-darker',
     href: '/contact'
   }
 ]
@@ -168,7 +168,7 @@ export default function PlatformPage() {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               The Complete{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
                 Learning Success
               </span>{' '}
               Platform
@@ -180,7 +180,7 @@ export default function PlatformPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5" />
@@ -380,7 +380,7 @@ export default function PlatformPage() {
                   <ul className="space-y-2 mb-6">
                     {path.features.map((feature, j) => (
                       <li key={j} className="flex items-center gap-2 text-neutral-700">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-primary-dark flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -456,7 +456,7 @@ export default function PlatformPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 font-medium text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary-dark font-medium text-sm rounded-full mb-4">
               The AI Advantage
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -593,7 +593,7 @@ export default function PlatformPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25"
               >
                 Schedule a Demo
                 <ArrowRight className="w-5 h-5" />

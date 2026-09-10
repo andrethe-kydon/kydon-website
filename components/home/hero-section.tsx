@@ -76,14 +76,14 @@ export function HeroSection({ content }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Link
                 href={data.primaryButtonLink}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
               >
                 {data.primaryButtonText}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href={data.secondaryButtonLink}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all"
               >
                 {data.secondaryButtonText}
               </Link>

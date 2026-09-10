@@ -168,7 +168,7 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
                     </p>
                     <a 
                       href="mailto:contact@kydongrp.com"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all"
                     >
                       <Mail className="w-5 h-5" />
                       contact@kydongrp.com
@@ -276,7 +276,7 @@ export default function ContactPageClient({ content }: ContactPageClientProps) {
             </p>
             <a 
               href="mailto:contact@kydongrp.com"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
             >
               <Mail className="w-5 h-5" />
               Get in Touch

@@ -66,7 +66,7 @@ export default function EnterpriseVerticalPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />
@@ -226,7 +226,7 @@ export default function EnterpriseVerticalPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />

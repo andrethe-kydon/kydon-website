@@ -56,7 +56,7 @@ export default function AILearningPlatformPage() {
               <span className="inline-block px-4 py-1.5 bg-white/20 text-white font-medium text-sm rounded-full">
                 AI Learning Platform
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-700 font-semibold text-sm rounded-full border border-purple-200">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900/40 text-white font-semibold text-sm rounded-full border border-white/25">
                 Beta
               </span>
             </div>
@@ -70,7 +70,7 @@ export default function AILearningPlatformPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5" />
@@ -256,7 +256,7 @@ export default function AILearningPlatformPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-neutral-100 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-dark font-semibold rounded-xl hover:bg-neutral-200 transition-all shadow-lg"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />

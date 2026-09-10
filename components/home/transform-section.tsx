@@ -110,7 +110,7 @@ export function TransformSection() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary-dark text-white font-semibold rounded-xl hover:bg-primary-darker transition-all shadow-lg shadow-primary/25"
                 >
                   Contact Us Today
                   <ArrowRight className="w-5 h-5" />
