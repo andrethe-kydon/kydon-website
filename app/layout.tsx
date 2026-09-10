@@ -16,7 +16,7 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://www.kydongrp.com'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#F15522',
+  themeColor: '#FE5000',
 }
 
 export const metadata: Metadata = {

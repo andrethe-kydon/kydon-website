@@ -10,27 +10,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand colours resolve through CSS variables set in globals.css, so a
+        // `data-brand` wrapper can flip a whole section between the Kydon Group
+        // palette (orange primary, blue accent) and KLSI (blue primary, orange
+        // accent) without touching any page file.
         primary: {
-          DEFAULT: '#F15522',
-          dark: '#D94A1C',
-          light: '#F47850',
+          DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
+          dark: 'rgb(var(--brand-primary-dark) / <alpha-value>)',
+          light: 'rgb(var(--brand-primary-light) / <alpha-value>)',
+          foreground: '#FFFFFF',
         },
         accent: {
-          DEFAULT: '#F15522',
-          dark: '#D94A1C',
-          light: '#F47850',
+          DEFAULT: 'rgb(var(--brand-accent) / <alpha-value>)',
+          dark: 'rgb(var(--brand-accent-dark) / <alpha-value>)',
+          light: 'rgb(var(--brand-accent-light) / <alpha-value>)',
+          foreground: '#FFFFFF',
         },
+        // Anchored on the guide greys: 300 is Light Grey 420, 400 is Mid Grey
+        // 429, 600 is Dark Grey 424. The rest are derived to keep the ramp even.
         neutral: {
           50: '#FAFAFA',
-          100: '#F5F5F5',
-          200: '#E5E5E5',
-          300: '#D4D4D4',
-          400: '#A3A3A3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+          100: '#F2F3F3',
+          200: '#E4E5E5',
+          300: '#C7C9C7',
+          400: '#A2AAAD',
+          500: '#85898B',
+          600: '#6D6E71',
+          700: '#575859',
+          800: '#3D3E3F',
+          900: '#262728',
         },
       },
       fontFamily: {
