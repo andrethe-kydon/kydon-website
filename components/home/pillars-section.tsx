@@ -26,7 +26,7 @@ const defaultPillars: PillarData[] = [
   {
     label: 'Delivery & Signal Layer',
     title: 'AI Workforce Factory',
-    subtitle: 'Skills & Credentials',
+    subtitle: 'Train, Deploy, Hire',
     icon: 'graduation-cap',
     features: [
       'Role-based AI tracks',
@@ -34,7 +34,7 @@ const defaultPillars: PillarData[] = [
       'Continuous readiness/performance signals',
     ],
     link: '/ai-workforce-factory',
-    status: 'coming-soon',
+    status: 'live',
   },
   {
     label: 'Intelligence Layer',

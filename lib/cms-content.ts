@@ -53,12 +53,12 @@ export const defaultPillars: PillarData[] = [
   },
   {
     title: 'AI Workforce Factory',
-    subtitle: 'Skills & Credentials',
+    subtitle: 'Train, Deploy, Hire',
     label: 'Delivery & Signal Layer',
     description: 'Comprehensive AI education programs designed for every role—from executives to frontline workers—ensuring organization-wide AI fluency.',
     icon: 'graduation-cap',
     link: '/ai-workforce-factory',
-    status: 'coming-soon',
+    status: 'live',
     features: [
       'Role-based AI tracks',
       'Credentials / Skills Passport',
@@ -148,13 +148,11 @@ export async function getPillarsWithFallback(): Promise<PillarData[]> {
   if (cmsPillars && cmsPillars.length > 0) {
     // Map CMS pillars but ensure status is included
     return cmsPillars.map(pillar => {
-      // Get default status based on title if not provided by CMS
+      // Anything the CMS does not give an explicit status is live. AI Learning
+      // Engine is the last title-keyed default; the AI Workforce Factory rule
+      // that used to sit here is gone -- that page has shipped.
       let status: PillarStatus = pillar.status || 'live'
-      if (!pillar.status) {
-        if (pillar.title === 'AI Workforce Factory') status = 'coming-soon'
-        else if (pillar.title === 'AI Learning Engine') status = 'beta'
-        else status = 'live'
-      }
+      if (!pillar.status && pillar.title === 'AI Learning Engine') status = 'beta'
       return {
         title: pillar.title,
         subtitle: pillar.subtitle,
