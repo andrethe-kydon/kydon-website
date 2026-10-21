@@ -46,10 +46,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/ai-learning-engine`,
+      url: `${baseUrl}/ai-co-workers`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/kydon-intelligence`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/company`,
@@ -77,15 +89,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Verticals pages
-  const verticalPages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/verticals`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/verticals/enterprise`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/verticals/government`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/verticals/education`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/verticals/partners`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-  ]
-
   // Solutions pages
   const solutionPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/solutions/enterprise`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
@@ -96,7 +99,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Business pages
   const businessPages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/businesses/kydon-learning-systems`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/businesses/zillearn-bina-riya`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
   ]
 
@@ -136,5 +138,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Error fetching jobs for sitemap:', error)
   }
 
-  return [...corePages, ...verticalPages, ...solutionPages, ...businessPages, ...blogPosts, ...jobPages]
+  return [...corePages, ...solutionPages, ...businessPages, ...blogPosts, ...jobPages]
 }

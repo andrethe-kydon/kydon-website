@@ -13,7 +13,7 @@ const focuses = [
 
 export default function ZillearnBinaRiyaPage() {
   return (
-    <main className="pt-24">
+    <main>
       <section className="py-20 bg-gradient-to-br from-neutral-50 via-white to-primary/5">
         <div className="max-w-container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">

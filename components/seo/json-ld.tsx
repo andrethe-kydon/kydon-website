@@ -14,7 +14,7 @@ export function OrganizationSchema({
   name = 'Kydon Group',
   url = 'https://www.kydongrp.com',
   logo = 'https://www.kydongrp.com/favicon.svg',
-  description = 'Kydon is the AI-Learning Company, providing agentic AI infrastructure for enterprise workforce transformation. Founded in 2012 in Singapore, Kydon delivers data intelligence and personalized learning solutions across Southeast Asia and Australia.',
+  description = 'Kydon is where people and AI learn, and learn to work together. Kydon ZilLearn is the learning and performance platform for people and AI agents, alongside AI Co-Workers and the AI Workforce Factory™. Founded in 2012 in Singapore, Kydon works with enterprises, governments and educators across Asia-Pacific.',
   sameAs = [
     'https://www.linkedin.com/company/kydon-group/',
   ],
@@ -24,7 +24,7 @@ export function OrganizationSchema({
     '@type': 'Organization',
     '@id': 'https://www.kydongrp.com/#organization',
     name,
-    alternateName: ['Kydon', 'Kydon Group Pte Ltd'],
+    alternateName: ['Kydon', 'Kydon Holdings Pte Ltd', 'Kydon Group Pte Ltd'],
     url,
     logo: {
       '@type': 'ImageObject',
@@ -69,29 +69,29 @@ export function OrganizationSchema({
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Enterprise AI Learning Solutions',
+      name: 'Kydon platform and services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Agent OS Learning Platform',
-            description: 'AI-powered learning management platform with intelligent agents for personalized training.',
+            name: 'Kydon ZilLearn',
+            description: 'The learning and performance platform for people and AI agents. Whatever agents your teams use, people and agents learn from each other so performance keeps improving.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Learning Engine',
-            description: 'Core intelligence layer for personalized learning recommendations and adaptive content delivery.',
+            name: 'AI Co-Workers',
+            description: 'Role-ready AI agents that work alongside your people in customer, operations, risk and compliance, and learning roles.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Workforce Factory',
+            name: 'AI Workforce Factory™',
             description: 'Trains working professionals into AI operators and places them inside companies to run real AI projects.',
           },
         },
@@ -99,8 +99,8 @@ export function OrganizationSchema({
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Learning Intelligence Infrastructure',
-            description: 'Data-driven insights for training effectiveness and workforce capability mapping.',
+            name: 'Kydon Intelligence',
+            description: 'Insight into how people and AI agents perform together, for training effectiveness and workforce capability mapping.',
           },
         },
       ],
@@ -109,7 +109,7 @@ export function OrganizationSchema({
       {
         '@type': 'ContactPoint',
         contactType: 'sales',
-        email: 'hello@kydongrp.com',
+        email: 'contact@kydongrp.com',
         url: 'https://www.kydongrp.com/contact',
         availableLanguage: ['English'],
       },
@@ -133,7 +133,7 @@ export function OrganizationSchema({
       {
         '@type': 'Organization',
         name: 'Kydon Learning Systems International (KLSI)',
-        url: 'https://www.kydongrp.com/businesses/kydon-learning-systems',
+        url: 'https://lsi.kydongrp.com',
         description: 'Full-service learning solutions including consulting, custom LMS, content development, AR/VR, and system integration.',
         parentOrganization: {
           '@id': 'https://www.kydongrp.com/#organization',
@@ -171,10 +171,12 @@ export function LocalBusinessSchema() {
       name: 'Kydon Group - Singapore Headquarters',
       image: 'https://www.kydongrp.com/og-image.png',
       url: 'https://www.kydongrp.com',
-      email: 'hello@kydongrp.com',
-      description: 'Kydon Group headquarters in Singapore. Enterprise AI learning and workforce transformation solutions.',
+      email: 'contact@kydongrp.com',
+      description: 'Kydon Group headquarters in Singapore. Learning and performance for people and AI agents.',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: '2 Science Park Drive, Ascent #01-32',
+        postalCode: '118222',
         addressLocality: 'Singapore',
         addressCountry: 'SG',
       },
@@ -199,8 +201,8 @@ export function LocalBusinessSchema() {
       name: 'Kydon Group - Sydney Office',
       image: 'https://www.kydongrp.com/og-image.png',
       url: 'https://www.kydongrp.com',
-      email: 'hello@kydongrp.com',
-      description: 'Kydon Group operations in Sydney, Australia. Enterprise AI learning solutions for the Australian market.',
+      email: 'contact@kydongrp.com',
+      description: 'Kydon Group operations in Sydney, Australia. Learning and performance for people and AI agents in Australia.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Sydney',
@@ -228,8 +230,8 @@ export function LocalBusinessSchema() {
       name: 'Kydon Group - Melbourne Office',
       image: 'https://www.kydongrp.com/og-image.png',
       url: 'https://www.kydongrp.com',
-      email: 'hello@kydongrp.com',
-      description: 'Kydon Group operations in Melbourne, Australia. Enterprise AI learning solutions for the Australian market.',
+      email: 'contact@kydongrp.com',
+      description: 'Kydon Group operations in Melbourne, Australia. Learning and performance for people and AI agents in Australia.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Melbourne',
@@ -282,7 +284,7 @@ export function WebSiteSchema({
     '@id': 'https://www.kydongrp.com/#website',
     name,
     url,
-    description: 'The AI-Learning Company. Enterprise data intelligence and workforce transformation solutions across Southeast Asia and Australia.',
+    description: 'Where people and AI learn, and learn to work together. Kydon ZilLearn, AI Co-Workers and the AI Workforce Factory™.',
     publisher: {
       '@id': 'https://www.kydongrp.com/#organization',
     },

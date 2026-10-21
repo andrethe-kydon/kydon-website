@@ -20,6 +20,14 @@ const nextConfig = {
         destination: '/ai-workforce-factory',
         permanent: true,
       },
+      // 2026 site refresh: retired pages point to their replacements.
+      { source: '/ai-learning-engine', destination: '/ai-learning-platform', permanent: true },
+      { source: '/verticals', destination: '/#serve', permanent: true },
+      { source: '/verticals/:slug', destination: '/solutions/:slug', permanent: true },
+      { source: '/businesses/zillearn', destination: '/platform', permanent: true },
+      { source: '/businesses/kydon-learning-systems', destination: 'https://lsi.kydongrp.com', permanent: true },
+      { source: '/businesses', destination: '/company', permanent: true },
+      { source: '/solutions', destination: '/#serve', permanent: true },
     ];
   },
 };

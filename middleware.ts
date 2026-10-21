@@ -15,10 +15,10 @@ const redirectMap: Record<string, string> = {
   '/about': '/company',
   '/news/': '/insights',
   '/news': '/insights',
-  '/zillearn/': '/businesses/zillearn',
-  '/zillearn': '/businesses/zillearn',
-  '/zillearnhome/': '/businesses/zillearn',
-  '/zillearnhome': '/businesses/zillearn',
+  '/zillearn/': '/platform',
+  '/zillearn': '/platform',
+  '/zillearnhome/': '/platform',
+  '/zillearnhome': '/platform',
   '/products-new/': '/platform',
   '/products-new': '/platform',
   '/privacy-policy-2/': '/privacy-policy',
@@ -37,8 +37,8 @@ const redirectMap: Record<string, string> = {
   '/tag/e-learning': '/insights',
   '/tag/elearning/': '/insights',
   '/tag/elearning': '/insights',
-  '/tag/klsi/': '/businesses/kydon-learning-systems',
-  '/tag/klsi': '/businesses/kydon-learning-systems',
+  '/tag/klsi/': 'https://lsi.kydongrp.com',
+  '/tag/klsi': 'https://lsi.kydongrp.com',
 
   // === Old WordPress category/archive pages ===
   '/category/news/page/3/': '/insights',
@@ -96,6 +96,9 @@ export function middleware(request: NextRequest) {
   // Check exact redirect map first
   const exactRedirect = redirectMap[pathname] || redirectMap[pathname + '/']
   if (exactRedirect) {
+    if (/^https?:\/\//.test(exactRedirect)) {
+      return applySecurityHeaders(NextResponse.redirect(exactRedirect, 301))
+    }
     const url = request.nextUrl.clone()
     url.pathname = exactRedirect
     const response = NextResponse.redirect(url, 301)

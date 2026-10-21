@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, League_Spartan } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
+import './kydon-base.css'
+import './kydon.css'
+import { Header } from '@/components/site/header'
+import { Footer } from '@/components/site/footer'
 import GoogleAnalytics from '@/components/google-analytics'
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from '@/components/seo/json-ld'
 import TrackingScripts, { TrackingNoscript, FBPixelNoscript } from '@/components/tracking-scripts'
@@ -20,7 +22,7 @@ const montserrat = Montserrat({
 // ever use font-semibold (600) and font-bold (700).
 const leagueSpartan = League_Spartan({
   subsets: ['latin'],
-  weight: ['600', '700'],
+  weight: ['500', '600', '700', '800'],
   variable: '--font-league-spartan',
   display: 'swap',
 })
@@ -32,16 +34,16 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://www.kydongrp.com'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#FE5000',
+  themeColor: '#0E1215',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Kydon | The AI-Learning Company',
+    default: 'Kydon | Where people and AI learn, and learn to work together',
     template: '%s | Kydon',
   },
-  description: 'Kydon is the AI-Learning Company. Our agentic AI infrastructure aligns skills to enterprise priorities, delivering personalized learning at scale for workforce transformation.',
+  description: 'Kydon ZilLearn is the learning and performance platform for people and AI agents. Whatever AI agents your teams work with, Kydon makes your people and your agents learn from each other, so performance keeps improving.',
   keywords: [
     'AI learning',
     'workforce transformation',
@@ -80,21 +82,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Kydon',
-    title: 'Kydon | The AI-Learning Company',
-    description: 'The Operating System for the AI-Ready Workforce. Kydon delivers agentic AI infrastructure aligning skills to enterprise priorities.',
+    title: 'Kydon | Where people and AI learn, and learn to work together',
+    description: 'Kydon ZilLearn is the learning and performance platform for people and AI agents, with the AI Workforce Factory™ to put it to work.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Kydon - The AI-Learning Company',
+        alt: 'Kydon',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kydon | The AI-Learning Company',
-    description: 'The Operating System for the AI-Ready Workforce',
+    title: 'Kydon | Where people and AI learn, and learn to work together',
+    description: 'The learning and performance platform for people and AI agents.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -131,7 +133,7 @@ export default function RootLayout({
         <WebSiteSchema />
         <LocalBusinessSchema />
         <Header />
-        <main className="min-h-screen">
+        <main>
           {children}
         </main>
         <Footer />

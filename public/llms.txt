@@ -1,94 +1,59 @@
-# Kydon Group - The AI-Learning Company
+# Kydon
 
-> Kydon Group is an AI-learning company headquartered in Singapore, founded in 2012. We build agentic AI infrastructure that aligns skills to enterprise priorities, delivering personalized learning at scale for workforce transformation.
+> Kydon is where people and AI learn, and learn to work together. Kydon ZilLearn is the learning and performance platform for people and AI agents: whatever agents your teams use, your people and your agents learn from each other, so performance keeps improving long after go-live. Founded in Singapore in 2012.
 
-## Company Overview
+## Company overview
 
-- **Name:** Kydon Group Pte Ltd
-- **Founded:** 2012
-- **Headquarters:** Singapore
-- **Industry:** Enterprise AI Learning, Workforce Transformation, Data Intelligence
+- **Name:** Kydon Holdings
+- **Founded:** 2012, Singapore
+- **Headquarters:** 2 Science Park Drive, Ascent #01-32, Singapore 118222
+- **Works across:** Singapore, Malaysia, Indonesia, India and Australia
 - **Website:** https://www.kydongrp.com
-- **Tagline:** The AI-Learning Company
+- **Tagline:** Where people and AI learn, and learn to work together.
 
-## Key Offerings
+## What Kydon offers
 
-### Agent OS Learning Platform
-An AI-powered learning management platform that uses intelligent agents to deliver personalized training experiences. Features adaptive learning paths, smart assessments, and real-time performance analytics.
+### Kydon ZilLearn
+The learning and performance platform for people and AI agents. It sits across every agent your teams use and makes people and AI learn from each other.
 - URL: https://www.kydongrp.com/platform
 
-### AI Learning Engine
-The core intelligence layer that powers personalized learning recommendations, skill gap analysis, and adaptive content delivery using agentic AI.
-- URL: https://www.kydongrp.com/ai-learning-engine
-- Status: Beta
-
-### AI University
-Role-based AI training and reskilling programs for enterprise professionals. Provides structured learning tracks, AI credentials, and a skills passport for career development.
-- URL: https://www.kydongrp.com/ai-university
-- Status: Coming Soon
-
-### AI Learning Platform (Learning Intelligence Infrastructure)
-The intelligent backbone for learning operations, providing data-driven insights for training effectiveness and workforce capability mapping.
+### AI Learning Platform
+Capability of Kydon ZilLearn where your people learn: personalised pathways, answers in the flow of work and live insight into skills.
 - URL: https://www.kydongrp.com/ai-learning-platform
 
-### Kydon Learning Systems (KLSI)
-Full-service learning solutions including consulting, custom LMS development, content development (e-learning, AR, VR, gamification), system integration, and manpower support.
-- URL: https://www.kydongrp.com/businesses/kydon-learning-systems
+### Kydon Intelligence
+Capability of Kydon ZilLearn that helps the whole organisation monitor change, understand what it means and decide with evidence.
+- URL: https://www.kydongrp.com/kydon-intelligence
 
-### ZilLearn
-A subsidiary focused on digital learning solutions and LMS platforms.
-- URL: https://zillearn.com
+### AI Co-Workers
+Ready-built AI roles that take on routine work so people can do more of what only people can. Each is run inside your team by a Forward Deployed Operator.
+- URL: https://www.kydongrp.com/ai-co-workers
 
-### ZilLearn Bina Riya
-Malaysia-based operations providing localized learning and workforce development solutions.
-- URL: https://www.kydongrp.com/businesses/zillearn-bina-riya
+### AI Workforce Factory™
+The talent engine behind Kydon ZilLearn. It trains Forward Deployed Operators, deploys them with clients and feeds what is learnt back into training.
+- URL: https://www.kydongrp.com/ai-workforce-factory
 
-## Target Regions
+### Kydon Learning Systems Institute
+Kydon's learning and development institute.
+- URL: https://lsi.kydongrp.com
 
-- **Primary:** Singapore, Malaysia, Southeast Asia
-- **Secondary:** Australia (Sydney, Melbourne), Asia-Pacific
+## Who Kydon serves
 
-## Industry Verticals
+- Enterprise: https://www.kydongrp.com/solutions/enterprise
+- Government: https://www.kydongrp.com/solutions/government
+- Education: https://www.kydongrp.com/solutions/education
+- Partners: https://www.kydongrp.com/solutions/partners
 
-- **Enterprise:** AI-powered workforce transformation for corporations
-- **Government:** Public sector training and digital capability building
-- **Education:** Institutional learning technology and curriculum development
-- **Partners:** Channel partner enablement and training programs
+## Key pages
 
-## Core Capabilities
-
-- Agentic AI for adaptive learning
-- Enterprise LMS platform development
-- AI readiness assessment and consulting
-- Custom e-learning content development (including AR/VR)
-- Workforce skill gap analysis and mapping
-- Learning analytics and intelligence
-- AI governance and training frameworks
+- Home: https://www.kydongrp.com
+- Company: https://www.kydongrp.com/company
+- Insights: https://www.kydongrp.com/insights
+- Careers: https://www.kydongrp.com/careers
+- Contact: https://www.kydongrp.com/contact
 
 ## Contact
 
-- **Email:** hello@kydongrp.com
-- **Website:** https://www.kydongrp.com/contact
+- **Email:** contact@kydongrp.com
+- **Phone:** +65 6681 5691
 - **LinkedIn:** https://www.linkedin.com/company/kydon-group/
-
-## Subsidiaries
-
-- Kydon Learning Systems International (KLSI)
-- ZilLearn Pte Ltd
-- ZilLearn Bina Riya Sdn Bhd (Malaysia)
-
-## Key Pages
-
-- Homepage: https://www.kydongrp.com
-- Platform: https://www.kydongrp.com/platform
-- AI Learning Engine: https://www.kydongrp.com/ai-learning-engine
-- AI University: https://www.kydongrp.com/ai-university
-- AI Learning Platform: https://www.kydongrp.com/ai-learning-platform
-- Company: https://www.kydongrp.com/company
-- Insights & Blog: https://www.kydongrp.com/insights
-- Careers: https://www.kydongrp.com/careers
-- Contact: https://www.kydongrp.com/contact
-- Enterprise Solutions: https://www.kydongrp.com/solutions/enterprise
-- Government Solutions: https://www.kydongrp.com/solutions/government
-- Education Solutions: https://www.kydongrp.com/solutions/education
-- Partner Solutions: https://www.kydongrp.com/solutions/partners

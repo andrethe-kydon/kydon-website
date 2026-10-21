@@ -1,0 +1,51 @@
+/*
+ * Restores the browser defaults the design mock-up relied on, which
+ * Tailwind's preflight resets. Scoped to .k so other pages are unaffected.
+ */
+.k, .k *, .k *::before, .k *::after { box-sizing: content-box; }
+.k select, .k button { box-sizing: border-box; }
+.k h1, .k h2, .k h3, .k h4 { font-weight: 700; }
+.k h1 { font-size: 2em; }
+.k h2 { font-size: 1.5em; }
+.k h3 { font-size: 1.17em; }
+.k h4 { font-size: 1em; }
+.k p { margin-block: 1em; }
+.k ul, .k ol { margin-block: 1em; padding-left: 40px; }
+.k ul { list-style: disc; }
+.k ol { list-style: decimal; }
+.k strong, .k b { font-weight: 700; }
+.k img, .k svg { display: inline; vertical-align: baseline; }
+.k img { max-width: none; }
+.k button { cursor: pointer; }
+.k table { text-indent: 0; }
+
+/* Article body (rich text from Sanity) */
+.k .prose-k { display: flex; flex-direction: column; gap: 16px; font-size: 18px; line-height: 1.65; color: #C9D1D6; }
+.k .prose-k p { margin: 0; }
+.k .prose-k h2 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.12; margin-top: 20px; }
+.k .prose-k h3 { font-size: 24px; line-height: 1.2; margin-top: 14px; }
+.k .prose-k h4 { font-size: 20px; margin-top: 10px; }
+.k .prose-k ul, .k .prose-k ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+.k .prose-k li::marker { color: #FE5000; }
+.k .prose-k blockquote { margin: 8px 0; border-left: 3px solid #FE5000; padding: 4px 0 4px 20px; color: #fff; font-size: 20px; }
+.k .prose-k a { color: #FF7A3D; text-decoration: underline; }
+.k .prose-k strong { color: #fff; }
+.k .prose-k img { width: 100%; height: auto; display: block; }
+
+/* HubSpot form, restyled for the dark site */
+.k .hs-form fieldset { max-width: none !important; }
+.k .hs-form .hs-form-field { margin-bottom: 14px; }
+.k .hs-form label { display: block; font-size: 14px; font-weight: 600; color: #E3E8EB; margin-bottom: 6px; }
+.k .hs-form .hs-input { width: 100% !important; min-height: 48px; border: 1px solid rgba(255,255,255,0.2); background: #0E1215; padding: 10px 12px; font: inherit; color: #fff; border-radius: 2px; box-sizing: border-box; }
+.k .hs-form textarea.hs-input { min-height: 120px; }
+.k .hs-form .hs-input:focus { outline: 2px solid #FE5000; outline-offset: 1px; }
+.k .hs-form .hs-button { display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: linear-gradient(105deg,#B83A00 0%,#E04700 28%,#FE5000 62%,#FE5000 100%); color: #0E1215; border: 0; font-family: var(--font-league-spartan), sans-serif; font-weight: 700; font-size: 18px; border-radius: 2px; cursor: pointer; }
+.k .hs-form .hs-error-msgs { list-style: none; padding: 0; margin: 6px 0 0; color: #FF7A3D; font-size: 13px; }
+.k .hs-form .legal-consent-container, .k .hs-form .hs-richtext { font-size: 13px; color: #93A0A8; }
+.k .hs-form .inputs-list { list-style: none; padding: 0; margin: 0; }
+.k .submitted-message { color: #3DDC84; font-weight: 600; }
+
+/* Mobile heroes with a top banner start flush under the header (matches the mock-up). */
+@media (max-width: 760px) {
+  .k.k.k [data-mhero] { padding-top: 0 !important; }
+}
