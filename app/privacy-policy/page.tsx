@@ -155,8 +155,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="card" style={{ padding: '24px' }}>
               <p>Kydon Holdings Pte Ltd</p>
-              <p>1 Fusionopolis Place, #03-20 Galaxis</p>
-              <p>Singapore 138522</p>
+              <p>2 Science Park Drive, Ascent #01-32</p>
+              <p>Singapore 118222</p>
               <p>
                 Email: <a href="mailto:info@kydongrp.com">info@kydongrp.com</a>
               </p>
