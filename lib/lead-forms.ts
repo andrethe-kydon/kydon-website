@@ -7,10 +7,10 @@
 export const HUBSPOT_PORTAL_ID = '2457674'
 
 export const LEAD_FORMS = {
-  catalogue: { formId: '', label: 'Website: AI Co-Worker catalogue' },
-  whitePaper: { formId: '', label: 'Website: AI Workforce Factory white paper' },
-  subscribe: { formId: '', label: 'Website: Insights subscribe' },
-  demo: { formId: '', label: 'Website: Kydon Intelligence demo request' },
+  catalogue: { formId: 'ae2234c7-907e-42c3-aaa4-dd3d9756d749', label: 'Website: AI Co-Worker catalogue' },
+  whitePaper: { formId: '5c7ef712-321e-4d4c-b694-2587aebc7ea8', label: 'Website: AI Workforce Factory white paper' },
+  subscribe: { formId: '5e309679-d2c0-426f-893b-35f9625759a3', label: 'Website: Insights subscribe' },
+  demo: { formId: 'eba64bc4-2e9d-4e25-84b9-2a8c7abcbce5', label: 'Website: Kydon Intelligence demo request' },
 } as const
 
 export type LeadFormKey = keyof typeof LEAD_FORMS
