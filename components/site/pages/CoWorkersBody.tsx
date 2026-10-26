@@ -209,7 +209,7 @@ export default function CoWorkersBody() {
 <label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Company<input type="text" name="company" autoComplete="organization" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
 <button className="btn" type="submit" disabled={V.sending} style={{border: "0", cursor: "pointer"}}>{V.sending ? 'Sending…' : 'Get the catalogue'}</button>
 </form>
-{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. Your catalogue is ready.</p><p style={{margin: "6px 0 0"}}><a className="btn-line" href="/downloads/kydon-ai-co-workers-overview.pdf" target="_blank" rel="noopener">Download the catalogue (PDF, 2.6 MB) ↓</a></p></>)}
+{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. Your catalogue is ready.</p><p style={{margin: "6px 0 0"}}><a className="btn-line" href="/downloads/ai-workforce-factory-capability-catalogue.pdf" target="_blank" rel="noopener">Download the catalogue (PDF, 1.6 MB) ↓</a></p></>)}
 </div>
 </div>
 </section>
