@@ -27,7 +27,9 @@ const leagueSpartan = League_Spartan({
   display: 'swap',
 })
 
-export const dynamic = 'force-dynamic'
+// Pages are built once and refreshed in the background (each page sets its own
+// revalidate), so visits are served from Vercel's cache instead of running code.
+export const revalidate = 300
 
 const siteUrl = process.env.NEXTAUTH_URL || 'https://www.kydongrp.com'
 

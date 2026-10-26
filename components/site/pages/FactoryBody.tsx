@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @next/next/no-img-element, react/no-unescaped-entities */
 // Generated from the approved design mock-up (Factory). Edit freely.
 import { Fragment } from 'react'
+import { LEAD_FORMS, submitLead } from '@/lib/lead-forms'
 import { DCLogic, useDC } from '@/lib/dc'
 
 class FactoryLogic extends DCLogic {
@@ -17,7 +18,7 @@ const items = [
 { q: 'Can we partner with the AI Workforce Factory™?', a: 'Yes. Kydon designs and runs the AI Workforce Factory™, and works with institutes of higher learning, industry bodies, agencies and enterprises as delivery, demand and talent partners, guided by an advisory board Kydon convenes.' }
 ];
 const open = this.state.open;
-return { sent: !!this.state.sent, submit: () => this.setState({ sent: true }),  faqs: items.map((it, i) => ({ q: it.q, a: it.a, open: open === i, expanded: open === i ? 'true' : 'false', sign: open === i ? '−' : '+', toggle: () => this.setState({ open: open === i ? -1 : i }) })) };
+return { sent: !!this.state.sent, sending: !!this.state.sending, submit: (e: any) => { e.preventDefault(); const f = new FormData(e.currentTarget); this.setState({ sending: true }); submitLead('whitePaper', { email: String(f.get('email') || '') }).finally(() => this.setState({ sending: false, sent: true })); },  faqs: items.map((it, i) => ({ q: it.q, a: it.a, open: open === i, expanded: open === i ? 'true' : 'false', sign: open === i ? '−' : '+', toggle: () => this.setState({ open: open === i ? -1 : i }) })) };
 }
 }
 
@@ -208,11 +209,13 @@ export default function FactoryBody() {
 <div className="eyebrow">White paper</div>
 <h2 className="h2">The full framework, in one document.</h2>
 <p className="lead">Why training alone and tools alone both fail, how the Develop, Deploy and Learn flywheel works, and what it takes to run AI Co-Workers that keep improving.</p>
-<form aria-label="Download the white paper" style={{display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "flex-end"}}>
-<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB", flex: "1 1 220px"}}>Work email<input type="email" autoComplete="email" style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
-<button className="btn" type="button" onClick={V.submit} style={{border: "0", cursor: "pointer"}}>Download</button>
+{LEAD_FORMS.whitePaper.formId ? (<>
+<form aria-label="Request the white paper" onSubmit={V.submit} style={{display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "flex-end"}}>
+<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB", flex: "1 1 220px"}}>Work email<input type="email" name="email" autoComplete="email" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
+<button className="btn" type="submit" disabled={V.sending} style={{border: "0", cursor: "pointer"}}>{V.sending ? 'Sending…' : 'Request the white paper'}</button>
 </form>
-{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. The white paper is on its way to your inbox.</p></>)}
+{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. We'll email you the white paper.</p></>)}
+</>) : (<a className="btn" href="/contact" style={{alignSelf: "flex-start"}}>Request the white paper →</a>)}
 </div>
 </div>
 </section>

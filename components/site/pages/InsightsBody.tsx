@@ -1,13 +1,14 @@
 'use client'
 /* eslint-disable @typescript-eslint/no-explicit-any, @next/next/no-img-element, react/no-unescaped-entities */
 // Generated from the approved design mock-up (Insights). Edit freely.
+import { LEAD_FORMS, submitLead } from '@/lib/lead-forms'
 import { DCLogic, useDC } from '@/lib/dc'
 import type { InsightCard } from '@/lib/insights'
 
 class InsightsLogic extends DCLogic {
 constructor(props: any) { super(props); this.state = { sent: false }; }
 renderVals(): any {
-return { sent: !!this.state.sent, submit: () => this.setState({ sent: true }) };
+return { sent: !!this.state.sent, sending: !!this.state.sending, submit: (e: any) => { e.preventDefault(); const f = new FormData(e.currentTarget); this.setState({ sending: true }); submitLead('subscribe', { email: String(f.get('email') || '') }).finally(() => this.setState({ sending: false, sent: true })); } };
 }
 }
 
@@ -45,8 +46,10 @@ export default function InsightsBody({ featured, more, total }: { featured: Insi
 <section id="subscribe" className="sec" style={{padding: "64px 0"}}>
 <div className="wrap" style={{display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", justifyContent: "space-between", background: "#151B20", border: "1px solid rgba(255,255,255,0.08)", padding: "36px"}}>
 <div><h2 style={{fontSize: "30px"}}>Stay ahead of the curve.</h2><p style={{margin: "6px 0 0"}}>New thinking on people, AI and performance, once a month.</p></div>
-<form style={{display: "flex", gap: "10px", flexWrap: "wrap"}} aria-label="Subscribe"><label className="fld" style={{minWidth: "280px"}}>Work email<input type="email" autoComplete="email" /></label><button className="btn" type="button" onClick={V.submit} style={{alignSelf: "flex-end", border: "0", cursor: "pointer"}}>Subscribe</button></form>
+{LEAD_FORMS.subscribe.formId ? (<>
+<form onSubmit={V.submit} style={{display: "flex", gap: "10px", flexWrap: "wrap"}} aria-label="Subscribe"><label className="fld" style={{minWidth: "280px"}}>Work email<input type="email" name="email" autoComplete="email" required /></label><button className="btn" type="submit" disabled={V.sending} style={{alignSelf: "flex-end", border: "0", cursor: "pointer"}}>{V.sending ? 'Sending…' : 'Subscribe'}</button></form>
 {(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Subscribed. Look out for our next issue.</p></>)}
+</>) : (<a className="btn" href="/contact" style={{alignSelf: "flex-start"}}>Get in touch to subscribe →</a>)}
 </div>
 </section>
 

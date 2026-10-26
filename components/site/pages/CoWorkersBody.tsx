@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @next/next/no-img-element, react/no-unescaped-entities */
 // Generated from the approved design mock-up (CoWorkers). Edit freely.
 import { Fragment } from 'react'
+import { submitLead } from '@/lib/lead-forms'
 import { DCLogic, useDC, sx } from '@/lib/dc'
 
 class CoWorkersLogic extends DCLogic {
@@ -30,7 +31,7 @@ const rec = cws[P[pain][1]];
 const wall: any[] = [];
 D.forEach((d, i) => { wall.push({ isImg: true, isText: false, img: d.img, alt: d.name + ', ' + d.role }); if (i === 4) wall.push({ isImg: false, isText: true, text: 'On shift 24/7' }); });
 wall.push({ isImg: false, isText: true, text: '60 skills' });
-return { sent: !!this.state.sent, submit: () => this.setState({ sent: true }),  cws, cur, pains, rec, wall };
+return { sent: !!this.state.sent, sending: !!this.state.sending, submit: (e: any) => { e.preventDefault(); const f = new FormData(e.currentTarget); this.setState({ sending: true }); submitLead('catalogue', { firstname: String(f.get('firstname') || ''), lastname: String(f.get('lastname') || ''), email: String(f.get('email') || ''), company: String(f.get('company') || '') }).finally(() => this.setState({ sending: false, sent: true })); },  cws, cur, pains, rec, wall };
 }
 }
 
@@ -201,13 +202,14 @@ export default function CoWorkersBody() {
 <div className="eyebrow">The full catalogue</div>
 <h2 className="h2">Every skill, step and result. In one download.</h2>
 <p className="lead">All sixty skills with typical results, twelve step-by-step deep dives with before-and-after numbers, the controls you keep, and how the assessment works.</p>
-<form aria-label="Download the capability catalogue" style={{display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "12px", alignItems: "end"}}>
-<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Name<input type="text" autoComplete="name" style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
-<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Work email<input type="email" autoComplete="email" style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
-<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Company<input type="text" autoComplete="organization" style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
-<button className="btn" type="button" onClick={V.submit}>Send me the catalogue</button>
+<form aria-label="Download the capability catalogue" onSubmit={V.submit} style={{display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "12px", alignItems: "end"}}>
+<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>First name<input type="text" name="firstname" autoComplete="given-name" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
+<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Last name<input type="text" name="lastname" autoComplete="family-name" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
+<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Work email<input type="email" name="email" autoComplete="email" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
+<label style={{display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px", color: "#E3E8EB"}}>Company<input type="text" name="company" autoComplete="organization" required style={{minHeight: "52px", background: "#151B20", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", padding: "0 14px", font: "inherit"}} /></label>
+<button className="btn" type="submit" disabled={V.sending} style={{border: "0", cursor: "pointer"}}>{V.sending ? 'Sending…' : 'Get the catalogue'}</button>
 </form>
-{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. The catalogue is on its way to your inbox.</p></>)}
+{(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. Your catalogue is ready.</p><p style={{margin: "6px 0 0"}}><a className="btn-line" href="/downloads/kydon-ai-co-workers-overview.pdf" target="_blank" rel="noopener">Download the catalogue (PDF, 2.6 MB) ↓</a></p></>)}
 </div>
 </div>
 </section>

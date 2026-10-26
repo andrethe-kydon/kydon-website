@@ -1,12 +1,13 @@
 'use client'
 /* eslint-disable @typescript-eslint/no-explicit-any, @next/next/no-img-element, react/no-unescaped-entities */
 // Generated from the approved design mock-up (Intelligence). Edit freely.
+import { LEAD_FORMS, submitLead } from '@/lib/lead-forms'
 import { DCLogic, useDC } from '@/lib/dc'
 
 class IntelligenceLogic extends DCLogic {
 constructor(props: any) { super(props); this.state = { sent: false }; }
 renderVals(): any {
-return { sent: !!this.state.sent, submit: () => this.setState({ sent: true }) };
+return { sent: !!this.state.sent, sending: !!this.state.sending, submit: (e: any) => { e.preventDefault(); const f = new FormData(e.currentTarget); this.setState({ sending: true }); submitLead('demo', { firstname: String(f.get('firstname') || ''), lastname: String(f.get('lastname') || ''), email: String(f.get('email') || ''), company: String(f.get('company') || '') }).finally(() => this.setState({ sending: false, sent: true })); } };
 }
 }
 
@@ -188,16 +189,19 @@ export default function IntelligenceBody() {
 <h2 className="h2" style={{color: "#0E1215"}}>Make intelligence actionable.</h2>
 <p style={{margin: "0", fontSize: "18px", color: "#0E1215", fontWeight: "500"}}>See how Kydon Intelligence helps your organisation monitor change, reduce risk and decide with confidence.</p>
 </div>
-<form style={{flex: "1 1 420px", background: "#0E1215", padding: "34px", display: "flex", flexDirection: "column", gap: "16px", boxSizing: "border-box", boxShadow: "0 30px 70px rgba(0,0,0,0.35)"}} aria-label="Request a demo">
+{LEAD_FORMS.demo.formId ? (<>
+<form onSubmit={V.submit} style={{flex: "1 1 420px", background: "#0E1215", padding: "34px", display: "flex", flexDirection: "column", gap: "16px", boxSizing: "border-box", boxShadow: "0 30px 70px rgba(0,0,0,0.35)"}} aria-label="Request a demo">
 <h3 style={{fontSize: "24px"}}>Request a demo</h3>
 <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: "14px"}}>
-<label className="fld">Full name<input type="text" name="name" autoComplete="name" /></label>
-<label className="fld">Work email<input type="email" name="email" autoComplete="email" /></label>
+<label className="fld">First name<input type="text" name="firstname" autoComplete="given-name" required /></label>
+<label className="fld">Last name<input type="text" name="lastname" autoComplete="family-name" required /></label>
+<label className="fld">Work email<input type="email" name="email" autoComplete="email" required /></label>
+<label className="fld">Organisation<input type="text" name="company" autoComplete="organization" required /></label>
 </div>
-<label className="fld">Organisation<input type="text" name="org" autoComplete="organization" /></label>
-<button className="btn" type="button" onClick={V.submit} style={{alignSelf: "flex-start", border: "0", cursor: "pointer"}}>Request a demo</button>
+<button className="btn" type="submit" disabled={V.sending} style={{alignSelf: "flex-start", border: "0", cursor: "pointer"}}>{V.sending ? 'Sending…' : 'Request a demo'}</button>
 </form>
 {(V.sent) && (<><p role="status" style={{margin: "10px 0 0", color: "#3DDC84", fontWeight: "600", fontSize: "15px"}}>Thanks. We'll be in touch to set up your demo.</p></>)}
+</>) : (<div style={{flex: "1 1 420px", background: "#0E1215", padding: "34px", display: "flex", flexDirection: "column", gap: "16px", boxSizing: "border-box", boxShadow: "0 30px 70px rgba(0,0,0,0.35)"}}><h3 style={{fontSize: "24px"}}>Request a demo</h3><p style={{margin: "0"}}>Tell us about your organisation and we'll set up a demo of Kydon Intelligence.</p><a className="btn" href="/contact" style={{alignSelf: "flex-start"}}>Request a demo →</a></div>)}
 </div>
 </section>
 
